@@ -25,15 +25,15 @@
 		<meta name="twitter:card"            content="summary">
 		<meta property="og:type"             content="website">
 		<meta name="twitter:site"            content="{{ site.twitter_username }}">
-		<meta property="og:site_name"        content="Morgan Carter's Portfolio">
+		<meta property="og:site_name"        content="{{ site.title }}">
 		<meta property="og:url"              content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 		<link rel="canonical"                href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 	{% if page.image %}
 		<meta name="twitter:image"         content="{{ site.url }}/assets/images/{{ page.image }}">
 		<meta property="og:image"          content="{{ site.url }}/assets/images/{{ page.image }}">
 	{% else %}
-		<meta name="twitter:image"         content="{{ site.url }}/assets/images/home/me_social.jpg">
-		<meta property="og:image"          content="{{ site.url }}/assets/images/home/me_social.jpg">
+		<meta name="twitter:image"         content="{{ site.url }}/facebook-ad.png">
+		<meta property="og:image"          content="{{ site.url }}/facebook-ad.png">
 	{% endif %}
 
 	<link rel="stylesheet" href="{{ "/assets/css/my.css" | prepend: site.baseurl }}">
