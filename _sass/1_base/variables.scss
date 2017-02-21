@@ -20,6 +20,7 @@ $font-lineHeight-header:    1;
 $letterSpacing-condensed:   -0.03em;
 
 // Layout
+$spacing-xxl:               6rem;
 $spacing-xl:                4rem;
 $spacing-lg:                2rem;
 $spacing-md:                1.5rem;
@@ -29,6 +30,7 @@ $spacing-xxs:               0.25rem;
 $spacing-names:             "0", "xxs", "xs", "sm", "md", "lg", "xl";
 $spacing-directions:        "", "-top", "-left", "-right", "-bottom";
 $spacing-amounts:           0, $spacing-xxs, $spacing-xs, $spacing-sm, $spacing-md, $spacing-lg, $spacing-xl;
+$spacing-amounts--lg:       0, $spacing-xxs, $spacing-xs, $spacing-sm, $spacing-md, $spacing-xl, $spacing-xxl;
 
 $container-xl:              1600px;
 $container-lg:              1280px;
@@ -60,9 +62,9 @@ $card-borderRadius:         $borderRadius-sm;
 
 // Shadows
 $inset-shadow:				inset 0 1px 3px rgba($mono-3, 0.1);
-$shadow:					0 2px 8px rgba($mono-3, 0.1), 0 8px 32px rgba($mono-3, 0.1);
+$shadow:					0 2px 0.5rem rgba($mono-3, 0.1), 0 0.5rem 2rem rgba($mono-3, 0.1), 0 2rem 8rem -2rem rgba($mono-3, 0.1);
 $shadow-pressed:			inset 0 0 0 100px rgba(black, 0.25);
-$shadow-hover:				0 2px 8px rgba(black, 0.05), 0 6px 16px rgba(black, 0.05), 0 16px 48px rgba(black, 0.05);
+$shadow-hover:				0 2px 0.5rem rgba(black, 0.07), 0 0.5rem 1rem rgba(black, 0.07), 0 1rem 3rem -1rem rgba(black, 0.07);
 // Shadows
 // $outline:					inset 0 0 0 2px rgba($mono-3, 0.5);
 
