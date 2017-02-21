@@ -1,0 +1,21 @@
+.Canvas {
+	padding: $spacing-sm;
+}
+@media (min-width: $media-sm) {
+	.Canvas {
+		padding-left: $spacing-md;
+		padding-right: $spacing-md;
+	}
+}
+@media (min-width: $media-md) {
+	.Canvas {
+		padding-left: $spacing-lg;
+		padding-right: $spacing-lg;
+	}
+}
+@media (min-width: $media-lg) {
+	.Canvas {
+		padding-left: $spacing-xl;
+		padding-right: $spacing-xl;
+	}
+}

@@ -1,0 +1,62 @@
+---
+layout: default
+body-id: work
+---
+
+<div class="padding--lg margin--none">
+	<div class="m-animation-1">
+		<h1 class="m-post-title">{{ page.title }}</h1>
+		<h6 class="u-text--center margin--none">
+			{% if page.role %}
+				{{ page.role }}
+			{% else %}
+				{{ page.date | date: "%-d %b, %Y" }}
+			{% endif %}
+		</h6>
+	</div>
+
+	<div class="m-post-content">
+		<div class="container--sm">
+			{{ content }}
+		</div>
+
+		{% if page.siteNav == 'blog' %}
+			<section class="margin--lg">
+				{% include newsletter.html %}
+			</section>
+
+			<p class="margin--lg container--sm">If you've got any alternative solutions to this problem, or want to suggest a new problem for me to tackle, please drop me a line at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+
+			<div id="disqus_thread" class="container--sm margin--lg"></div>
+			<script>
+				var disqus_config = function () {
+					this.page.url = "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"; // Replace PAGE_URL with your page's canonical URL variable
+					// this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				};
+				(function() { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+
+					s.src = '//morgancarter.disqus.com/embed.js';
+
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+		{% endif %}
+	</div>
+</div>
+
+{% if page.nextOne_link %}
+	<a class="btn-footer is-hasImage" href="/work/{{page.nextOne_link}}">
+		<div class="btn-footer-image" style="background-image: url(/assets/images/work/{{page.nextOne_img}})"></div>
+		<span class="btn" data-text="Next"></span>
+	</a>
+{% elsif page.siteNav == 'work' %}
+	<a class="btn-footer" href="/work/">
+		<span class="btn is-noImage" data-text="See more work"></span>
+	</a>
+{% elsif page.siteNav == 'blog' %}
+	<a class="btn-footer" href="/design-solutions/">
+		<span class="btn is-noImage" data-text="Read more posts"></span>
+	</a>
+{% endif %}

@@ -1,0 +1,35 @@
+.statusIcon {
+	@extend .icon;
+	width: 2rem;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	color: white;
+	border-radius: $borderRadius-sm;
+	box-shadow: $shadow;
+	cursor: default;
+}
+@for $i from 1 through length($status-colors) {
+	.statusIcon--#{nth($status-names, $i)} {
+		background: nth($status-colors, $i);
+	}
+}
+.statusIcon--muted {
+	background: $mono-4;
+}
+.statusIcon--minimal {
+	color: $mono-4;
+	box-shadow: none;
+}
+.statusIcon--placeholder {
+	color: $mono-6;
+	border: 2px dashed;
+	border-radius: $borderRadius-xs;
+	box-shadow: none;
+	line-height: calc(2rem - 4px);
+}
+.statusIcon--text {
+	font-family: inherit;
+	font-weight: 500;
+	font-feature-settings: 'frac' on;
+}

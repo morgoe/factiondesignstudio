@@ -1,0 +1,607 @@
+
+
+//@extend-elements
+//original selectors
+//.datepicker--nav-title, .datepicker--nav-action
+%extend_1 {
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+}
+
+//original selectors
+//.datepicker--time-current-hours, .datepicker--time-current-minutes
+%extend_2 {
+	line-height: 1;
+	font-size: 19px;
+	position: relative;
+	z-index: 1;
+}
+
+//original selectors
+//.datepicker--time-current-hours:after, .datepicker--time-current-minutes:after
+%extend_3 {
+	content: '';
+	background: $mono-95;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: $borderRadius-sm;
+	position: absolute;
+	left: -2px;
+	top: -3px;
+	right: -2px;
+	bottom: -2px;
+	z-index: -1;
+	opacity: 0;
+}
+
+//original selectors
+//.datepicker--time-icon:after, .datepicker--time-icon:before
+%extend_4 {
+	content: '';
+	background: currentColor;
+	position: absolute;
+}
+
+
+.datepicker--cell-day {
+	width: 14.28571%;
+	&.-other-month- {
+		opacity: 0.25;
+		&:empty {
+			background: none;
+			border: none;
+		}
+	}
+}
+.datepicker--cell-year {
+	width: 25%;
+	height: 33.33%;
+	&.-other-decade- {
+		color: $mono-8;
+		&:hover {
+			color: $mono-6;
+		}
+		&:empty {
+			background: none;
+			border: none;
+		}
+	}
+}
+.datepicker--cells {
+	display: flex;
+	flex-wrap: wrap;
+}
+.datepicker--cell {
+	border-radius: $borderRadius-sm;
+	cursor: pointer;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	height: $input-height;
+	z-index: 1;
+	&.-focus- {
+		background: $mono-95;
+	}
+	&.-current- {
+		color: $blue;
+		font-weight: bold;
+		&.-focus- {
+			color: inherit;
+		}
+	}
+	&.-in-range- {
+		color: $blue;
+		background: rgba($blue, 0.2);
+		border-radius: 0;
+		&.-focus- {
+			color: inherit;
+			background-color: $mono-95;
+		}
+	}
+	&.-disabled- {
+		cursor: default;
+		color: $mono-8;
+		&.-focus- {
+			background: none;
+			cursor: not-allowed;
+		}
+		&.-in-range- {
+			color: $blue;
+		}
+		&.-current-.-focus- {
+			color: $mono-8;
+		}
+	}
+	&.-range-from- {
+		border-radius: $borderRadius-sm 0 0 $borderRadius-sm;
+		&.-range-to- {
+			border-radius: $borderRadius-sm;
+		}
+		&.-focus- {
+			color: white;
+			background: $blue;
+		}
+	}
+	&.-range-to- {
+		border-radius: 0 $borderRadius-sm $borderRadius-sm 0;
+		&.-focus- {
+			color: white;
+			background: $blue;
+		}
+		&.-focus-.-disabled- {
+			color: $blue;
+			background: rgba($blue, 0.2);
+		}
+	}
+	&.-selected- {
+		color: white;
+		background: $blue;
+	}
+	&:empty {
+		cursor: default;
+	}
+}
+.datepicker--days-names {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 8px 0 3px;
+}
+.datepicker--day-name {
+	color: $mono-6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: $fontSize-xs;
+	font-weight: bold;
+}
+.datepicker--cells-months {
+	height: 170px;
+}
+.datepicker--cell-month {
+	width: 33.33%;
+	height: 25%;
+}
+.datepicker--years {
+	height: 170px;
+}
+.datepicker--cells-years {
+	height: 170px;
+}
+.datepickers-container {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+@media print {
+	.datepickers-container {
+		display: none;
+	}
+}
+.datepicker {
+	background: white;
+	box-shadow: $shadow-raised;
+	border-radius: $borderRadius-md;
+	font-size: 14px;
+	width: 250px;
+	position: absolute;
+	left: -100000px;
+	opacity: 0;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
+	z-index: $zIndex-datepicker;
+	&.-from-top- {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translateY(-8px);
+	}
+	&.-from-right- {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translateX(8px);
+	}
+	&.-from-bottom- {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translateY(8px);
+	}
+	&.-from-left- {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translateX(-8px);
+	}
+	&.active {
+		opacity: 1;
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(0);
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s;
+	}
+}
+.datepicker-inline {
+	.datepicker {
+		border: 2px solid $mono-8;
+		box-shadow: none;
+		position: static;
+		left: auto;
+		right: auto;
+		opacity: 1;
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: none;
+	}
+	.datepicker--pointer {
+		display: none;
+	}
+}
+.datepicker--content {
+	padding: $spacing-xxs;
+}
+.-only-timepicker- {
+	.datepicker--content {
+		display: none;
+	}
+	.datepicker--nav {
+		display: none;
+	}
+	.datepicker--time {
+		border-top: none;
+	}
+}
+.datepicker--pointer {
+	display: none;
+	position: absolute;
+	background: white;
+	width: 10px;
+	height: 10px;
+	z-index: -1;
+}
+.datepicker--body {
+	display: none;
+	&.active {
+		display: block;
+	}
+}
+.datepicker--nav {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 2px solid $mono-9;
+	min-height: $input-height;
+	padding: $spacing-xxs 0;
+	margin: 0 $spacing-sm;
+}
+.datepicker--nav-title {
+	@extend %extend_1;
+	border-radius: $borderRadius-sm;
+	padding: 0 8px;
+	i {
+		font-style: normal;
+		color: $mono-6;
+		margin-left: 5px;
+	}
+	&:hover {
+		background: $mono-95;
+	}
+	&.-disabled- {
+		cursor: default;
+		background: none;
+	}
+}
+.datepicker--nav-action {
+	@extend %extend_1;
+	width: $input-height;
+	border-radius: $borderRadius-sm;
+	//Instead of the line below you could use @include user-select($select)
+	user-select: none;
+	&:hover {
+		background: $mono-95;
+	}
+	&.-disabled- {
+		visibility: hidden;
+	}
+	svg {
+		width: $input-height;
+		height: $input-height;
+	}
+	path {
+		fill: none;
+		stroke: $mono-6;
+		stroke-width: 2px;
+	}
+}
+.datepicker--buttons {
+	display: flex;
+	margin: 0 $spacing-sm;
+	padding: $spacing-xxs 0;
+	border-top: 2px solid $mono-9;
+}
+.datepicker--button {
+	cursor: pointer;
+	border-radius: $borderRadius-sm;
+	flex: 1;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	height: $input-height;
+	&:hover {
+		background: $mono-95;
+	}
+	+ .datepicker--button {
+		margin-left: $spacing-xs;
+	}
+}
+.datepicker--time {
+	border-top: 2px solid $mono-9;
+	display: flex;
+	align-items: center;
+	margin: 0 $spacing-sm;
+	padding: $spacing-xxs 0;
+	position: relative;
+	&.-am-pm- .datepicker--time-sliders {
+		flex: 0 1 138px;
+		max-width: 138px;
+	}
+}
+.datepicker--time-sliders {
+	flex: 0 1 153px;
+	margin-left: 10px;
+	max-width: 153px;
+}
+.datepicker--time-label {
+	display: none;
+	font-size: 12px;
+}
+.datepicker--time-current {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	font-size: 14px;
+	text-align: center;
+}
+.datepicker--time-current-colon {
+	margin: 0 2px 3px;
+	line-height: 1;
+}
+.datepicker--time-current-hours {
+	@extend %extend_2;
+	&:after {
+		@extend %extend_3;
+	}
+	&.-focus-:after {
+		opacity: 1;
+	}
+}
+.datepicker--time-current-minutes {
+	@extend %extend_2;
+	&:after {
+		@extend %extend_3;
+	}
+	&.-focus-:after {
+		opacity: 1;
+	}
+}
+.datepicker--time-current-ampm {
+	text-transform: uppercase;
+	align-self: flex-end;
+	color: $mono-6;
+	margin-left: 6px;
+	font-size: 11px;
+	margin-bottom: 1px;
+}
+.datepicker--time-row {
+	display: flex;
+	align-items: center;
+	font-size: 11px;
+	height: 17px;
+	background: linear-gradient(to right, $mono-8, $mono-8) left 50%/100% 1px no-repeat;
+	&:first-child {
+		margin-bottom: 4px;
+	}
+	input[type='range'] {
+		background: none;
+		cursor: pointer;
+		flex: 1;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		&:hover::-webkit-slider-thumb {
+			border-color: $mono-4;
+		}
+		&:hover::-moz-range-thumb {
+			border-color: $mono-4;
+		}
+		&:hover::-ms-thumb {
+			border-color: $mono-4;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:focus::-webkit-slider-thumb {
+			background: $mono-4;
+			border-color: $mono-4;
+		}
+		&:focus::-moz-range-thumb {
+			background: $mono-4;
+			border-color: $mono-4;
+		}
+		&:focus::-ms-thumb {
+			background: $mono-4;
+			border-color: $mono-4;
+		}
+	}
+	input[type='range']::-webkit-slider-thumb {
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+		height: 12px;
+		width: 12px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 3px;
+		border: 1px solid $mono-8;
+		cursor: pointer;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: background .2s;
+		margin-top: -6px;
+	}
+	input[type='range']::-ms-tooltip {
+		display: none;
+	}
+	input[type='range']::-moz-range-thumb {
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+		height: 12px;
+		width: 12px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 3px;
+		border: 1px solid $mono-8;
+		cursor: pointer;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: background .2s;
+	}
+	input[type='range']::-ms-thumb {
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+		height: 12px;
+		width: 12px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 3px;
+		border: 1px solid $mono-8;
+		cursor: pointer;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: background .2s;
+	}
+	input[type='range']::-webkit-slider-runnable-track {
+		border: none;
+		height: 1px;
+		cursor: pointer;
+		color: transparent;
+		background: transparent;
+	}
+	input[type='range']::-moz-range-track {
+		border: none;
+		height: 1px;
+		cursor: pointer;
+		color: transparent;
+		background: transparent;
+	}
+	input[type='range']::-ms-track {
+		border: none;
+		height: 1px;
+		cursor: pointer;
+		color: transparent;
+		background: transparent;
+	}
+	input[type='range']::-ms-fill-lower {
+		background: transparent;
+	}
+	input[type='range']::-ms-fill-upper {
+		background: transparent;
+	}
+	span {
+		padding: 0 12px;
+	}
+}
+.datepicker--time-icon {
+	color: $mono-6;
+	border: 1px solid;
+	border-radius: 50%;
+	font-size: 16px;
+	position: relative;
+	margin: 0 5px -1px 0;
+	width: 1em;
+	height: 1em;
+	&:after {
+		@extend %extend_4;
+		height: .4em;
+		width: 1px;
+		left: calc(50% - 1px);
+		top: calc(50% +1px);
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translateY(-100%);
+	}
+	&:before {
+		@extend %extend_4;
+		width: .4em;
+		height: 1px;
+		top: calc(50% +1px);
+		left: calc(50% - 1px);
+	}
+}
+.-disabled-.-focus- {
+	&.datepicker--cell-day.-other-month- {
+		color: $mono-8;
+	}
+	&.datepicker--cell-year.-other-decade- {
+		color: $mono-8;
+	}
+}
+.-top-left- .datepicker--pointer {
+	top: calc(100% - 4px);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(135deg);
+	left: 10px;
+}
+.-top-center- .datepicker--pointer {
+	top: calc(100% - 4px);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(135deg);
+	left: calc(50% - 10px / 2);
+}
+.-top-right- .datepicker--pointer {
+	top: calc(100% - 4px);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(135deg);
+	right: 10px;
+}
+.-right-top- .datepicker--pointer {
+	right: calc(100% - 4px);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(225deg);
+	top: 10px;
+}
+.-right-center- .datepicker--pointer {
+	right: calc(100% - 4px);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(225deg);
+	top: calc(50% - 10px / 2);
+}
+.-right-bottom- .datepicker--pointer {
+	right: calc(100% - 4px);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(225deg);
+	bottom: 10px;
+}
+.-bottom-left- .datepicker--pointer {
+	bottom: calc(100% - 4px);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(315deg);
+	left: 10px;
+}
+.-bottom-center- .datepicker--pointer {
+	bottom: calc(100% - 4px);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(315deg);
+	left: calc(50% - 10px / 2);
+}
+.-bottom-right- .datepicker--pointer {
+	bottom: calc(100% - 4px);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(315deg);
+	right: 10px;
+}
+.-left-top- .datepicker--pointer {
+	left: calc(100% - 4px);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(45deg);
+	top: 10px;
+}
+.-left-center- .datepicker--pointer {
+	left: calc(100% - 4px);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(45deg);
+	top: calc(50% - 10px / 2);
+}
+.-left-bottom- .datepicker--pointer {
+	left: calc(100% - 4px);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(45deg);
+	bottom: 10px;
+}

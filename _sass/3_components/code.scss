@@ -1,0 +1,28 @@
+pre,
+code {
+	font-family: "Source Code Pro", monospace;
+	background: $mono-95;
+	color: $mono-4;
+	font-size: $fontSize-sm;
+}
+code {
+	padding: $spacing-xxs;
+	@include subpixel-antialiased();
+}
+.code--sm {
+	font-size: $fontSize-xs;
+	display: block;
+	max-width: 200px;
+	word-wrap: break-word;
+}
+pre {
+	border: 1px solid $mono-9;
+	padding: $spacing-xs $spacing-sm;
+	code {
+		padding: 0;
+	}
+}
+.pre--wrap {
+	white-space: pre-wrap;
+}
+

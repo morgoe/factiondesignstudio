@@ -1,0 +1,22 @@
+.table {
+	width: 100%;
+	margin-top: $spacing-md;
+	border-collapse: collapse;
+	thead {
+		font-weight: bold;
+	}
+	td,
+	th {
+		border: 1px solid $mono-8;
+		padding: $spacing-xs;
+		&:empty {
+			border: none;
+		}
+	}
+	th {
+		text-align: left;
+	}
+}
+.table--fixed {
+	table-layout: fixed;
+}

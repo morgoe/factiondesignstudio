@@ -1,0 +1,9 @@
+.ember-modal-overlay {
+	display: block;
+	@extend .modal-backdrop;
+}
+.ember-modal-dialog {
+	display: block;
+	@extend .modal-container;
+	margin: auto !important;
+}

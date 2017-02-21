@@ -1,0 +1,37 @@
+.color-white {
+	color: white;
+}
+.bg-white {
+	background: white;
+}
+.color-muted {
+	color: $mono-5;
+}
+.color-blueDark {
+	color: $blue-dark;
+}
+.bg-blueDark {
+	background: $blue-dark;
+}
+.bg-yellow {
+	background: $yellow;
+}
+@for $i from 1 through length($status-colors) {
+	.color-#{nth($status-names, $i)} {
+		color: nth($status-colors, $i) !important;
+	}
+	.bg-#{nth($status-names, $i)} {
+		background-color: nth($status-colors, $i) !important;
+	}
+	.bg-#{nth($status-names, $i)}--light {
+		background-color: rgba(nth($status-colors, $i), 0.1) !important;
+	}
+}
+@for $i from 1 through length($mono-colors) {
+	.color-#{nth($mono-names, $i)} {
+		color: nth($mono-colors, $i) !important;
+	}
+	.bg-#{nth($mono-names, $i)} {
+		background-color: nth($mono-colors, $i) !important;
+	}
+}

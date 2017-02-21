@@ -1,0 +1,50 @@
+.progress {
+	height: 1rem;
+	background: rgba($info, 0.1);
+}
+.progress-bar {
+	position: relative;
+	background: $info;
+	height: 1rem;
+	float: left;
+	min-width: $spacing-xs;
+	+ .progress-bar {
+		border-left: 2px solid white;
+	}
+}
+.progress-text {
+	position: absolute;
+	left: 100%;
+	top: -7px;
+	margin-left: $spacing-xxs;
+	font-weight: bold;
+}
+.progress--sm {
+	height: 0.5rem;
+	.progress-bar {
+		height: 0.5rem;
+	}
+}
+.progress-bar--animate {
+	transition: 0.1s;
+}
+@for $i from 1 through length($status-colors) {
+	.progress--#{nth($status-names, $i)} {
+		background: rgba(nth($status-colors, $i), 0.1);
+		.progress-text {
+			color: nth($status-colors, $i);
+		}
+		.progress-bar {
+			background: nth($status-colors, $i);
+		}
+	}
+}
+@for $i from 1 through length($status-colors) {
+	.progress-bar--#{nth($status-names, $i)} {
+		background: nth($status-colors, $i);
+	}
+}
+.progress--hasText {
+	margin-right: 3rem;
+	background: none !important;
+}

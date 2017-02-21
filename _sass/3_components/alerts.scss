@@ -1,0 +1,159 @@
+.alert {
+	position: relative;
+	@include flexbox();
+	@include justify-content(flex-start);
+	max-width: $media-md;
+}
+.alert-text {
+	border-radius: $borderRadius-md;
+	padding: $spacing-xs $spacing-sm;
+	a {
+		color: inherit;
+		font-weight: 600;
+		text-decoration: underline;
+	}
+	ul {
+		padding-left: 1rem;
+		list-style: initial;
+	}
+}
+.alert-icon {
+	@extend .icon;
+	padding-top: $spacing-xs;
+	padding-right: $spacing-xs;
+}
+.alert--block {
+	.alert-text {
+		@include flex-grow(1);
+	}
+}
+.alert--left {
+	@include justify-content(flex-start);
+}
+.alert--center {
+	@include justify-content(center);
+	margin: auto;
+}
+.alert--right {
+	@include justify-content(flex-end);
+	margin-left: auto;
+}
+.alert--empty {
+	color: $mono-3;
+	.alert-text {
+		background: rgba($mono-3, 0.1);
+	}
+}
+.alert--inverted {
+	.alert-icon {
+		color: white;
+	}
+	.alert-text {
+		color: $mono-3;
+		background: white;
+	}
+}
+.alert--empty.alert--inverted {
+	color: white;
+	.alert-icon,
+	.alert-text {
+		color: inherit;
+	}
+	.alert-text {
+		background: rgba(white, 0.1);
+	}
+}
+@for $i from 1 through length($status-colors) {
+	.alert--#{nth($status-names, $i)} {
+		.alert-icon,
+		.alert-text a {
+			color: nth($status-colors, $i);
+		}
+		.alert-text {
+			background: rgba(nth($status-colors, $i), 0.1);
+		}
+		&.alert--overlay {
+			.alert-text {
+				color: white;
+				background: nth($status-colors, $i);
+			}
+		}
+	}
+}
+.alert--tip {
+	.alert-icon,
+	.alert-text {
+		border: 1px solid rgba($warning, 0.5);
+	}
+	.alert-icon {
+		color: $warning;
+		border-right: none;
+		padding-left: $spacing-xs;
+		padding-bottom: $spacing-xs;
+		border-top-left-radius: $borderRadius-md;
+		border-bottom-left-radius: $borderRadius-md;
+	}
+	.alert-text {
+		padding-left: 0;
+		border-left: none;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		&:before {
+			content: "Did you know:";
+			font-weight: 500;
+		}
+	}
+}
+.alert--overlay {
+	opacity: 0;
+	pointer-events: none;
+	position: fixed;
+	top: $spacing-lg;
+	left: 0;
+	right: 0;
+	z-index: $zIndex-alertOverlay;
+	&.now-active {
+		@include -webkit-prefix(animation, alert-in 3s 1);
+	}
+	.alert-text {
+		box-shadow: $shadow-raised;
+	}
+}
+
+@keyframes alert-in {
+	0% {
+		opacity: 0;
+		@include -webkit-prefix(transform, translateY(#{-$spacing-lg}));
+	}
+	30% {
+		opacity: 1;
+		@include -webkit-prefix(transform, translateY(0));
+	}
+	70% {
+		opacity: 1;
+		@include -webkit-prefix(transform, translateY(0));
+	}
+	100% {
+		opacity: 0;
+		@include -webkit-prefix(transform, translateY(#{$spacing-lg}));
+	}
+}
+
+@-webkit-keyframes alert-in {
+	0% {
+		opacity: 0;
+		@include -webkit-prefix(transform, translateY(#{-$spacing-lg}));
+	}
+	30% {
+		opacity: 1;
+		@include -webkit-prefix(transform, translateY(0));
+	}
+	70% {
+		opacity: 1;
+		@include -webkit-prefix(transform, translateY(0));
+	}
+	100% {
+		opacity: 0;
+		@include -webkit-prefix(transform, translateY(#{$spacing-lg}));
+	}
+}

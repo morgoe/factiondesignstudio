@@ -1,0 +1,33 @@
+.graph {
+	display: block;
+	margin: auto;
+}
+
+.graph-axis {
+	path,
+	line {
+		fill: none;
+		stroke: $mono-2;
+		shape-rendering: crispEdges;
+	}
+	text {
+		fill: $mono-6;
+	}
+}
+.graph-axis--x {
+	line {
+		// stroke: $mono-2;
+		opacity: 0.1;
+	}
+}
+
+.line {
+  fill: none;
+  stroke: $blue;
+  stroke-width: 2px;
+}
+
+g {
+	font-size: $fontSize-sm;
+	font-family: inherit;
+}

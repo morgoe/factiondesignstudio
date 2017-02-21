@@ -1,0 +1,14 @@
+.blockquote {
+	font-style: italic;
+	border-left: 3px solid $mono-8;
+	padding-left: $spacing-md;
+	padding: $spacing-xs $spacing-md;
+}
+.blockquote-text {
+	font-size: $fontSize-lg;
+}
+.blockquote-author {
+	color: $mono-4;
+	font-style: normal;
+	margin-top: $spacing-xs;
+}

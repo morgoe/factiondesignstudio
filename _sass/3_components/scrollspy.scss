@@ -1,0 +1,38 @@
+.scrollspy {
+	display: block;
+	border-radius: $input-borderRadius;
+	overflow: hidden;
+}
+.scrollspy-item {
+	position: relative;
+}
+.scrollspy-item--indented {
+	padding-left: $spacing-sm;
+}
+.scrollspy-link {
+	position: static !important;
+	color: $mono-4;
+	height: $input-height;
+	padding: 5px $spacing-xs;
+	@include ellipsis();
+	display: block;
+	&:hover {
+		color: $mono-2;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+	&.now-active {
+		color: $mono-2;
+		font-weight: bold;
+	}
+}
+.scrollspy-progress {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: $mono-2;
+	opacity: 0.1;
+	z-index: -1;
+}

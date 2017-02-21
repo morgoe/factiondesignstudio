@@ -1,0 +1,17 @@
+.container {
+	max-width: $container-lg;
+	margin-left: auto;
+	margin-right: auto;
+}
+.container--xs {
+	max-width: $container-xs;
+}
+.container--sm {
+	max-width: $container-sm;
+}
+.container--md {
+	max-width: $container-md;
+}
+.container--xl {
+	max-width: $container-xl;
+}

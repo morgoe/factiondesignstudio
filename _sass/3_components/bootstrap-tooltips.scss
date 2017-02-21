@@ -1,0 +1,74 @@
+.tooltip {
+	position: absolute;
+	z-index: $zIndex-tooltip;
+	display: block;
+	// Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
+	// So reset our font and text properties to avoid inheriting weird values.
+	// @include reset-text;
+	font-weight: normal;
+	font-size: $fontSize-sm;
+	letter-spacing: $letterSpacing-wide;
+	a {
+		text-decoration: underline;
+	}
+	.icon {
+		font-size: $fontSize;
+		vertical-align: text-bottom;
+	}
+
+	// &.in     { @include opacity($tooltip-opacity); }
+	&.top    { margin-top:  -3px; padding: $tooltip-arrowWidth 0; }
+	&.right  { margin-left:  3px; padding: 0 $tooltip-arrowWidth; }
+	&.bottom { margin-top:   3px; padding: $tooltip-arrowWidth 0; }
+	&.left   { margin-left: -3px; padding: 0 $tooltip-arrowWidth; }
+}
+
+// Wrapper for the tooltip content
+.tooltip-inner {
+	max-width: 200px;
+	padding: 3px $spacing-sm 4px;
+	color: white;
+	background: $mono-2;
+	text-align: center;
+	border-radius: $borderRadius-sm;
+}
+
+// // Arrows
+.tooltip-arrow {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+}
+
+.tooltip {
+	&.top .tooltip-arrow {
+		bottom: 0;
+		left: 50%;
+		margin-left: -$tooltip-arrowWidth;
+		border-width: $tooltip-arrowWidth $tooltip-arrowWidth 0;
+		border-top-color: $mono-2;
+	}
+	&.right .tooltip-arrow {
+		top: 50%;
+		left: 0;
+		margin-top: -$tooltip-arrowWidth;
+		border-width: $tooltip-arrowWidth $tooltip-arrowWidth $tooltip-arrowWidth 0;
+		border-right-color: $mono-2;
+	}
+	&.left .tooltip-arrow {
+		top: 50%;
+		right: 0;
+		margin-top: -$tooltip-arrowWidth;
+		border-width: $tooltip-arrowWidth 0 $tooltip-arrowWidth $tooltip-arrowWidth;
+		border-left-color: $mono-2;
+	}
+	&.bottom .tooltip-arrow {
+		top: 0;
+		left: 50%;
+		margin-left: -$tooltip-arrowWidth;
+		border-width: 0 $tooltip-arrowWidth $tooltip-arrowWidth;
+		border-bottom-color: $mono-2;
+	}
+}

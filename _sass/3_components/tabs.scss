@@ -1,0 +1,96 @@
+.tabs {
+	@include flexbox();
+	@include flex-wrap(wrap);
+	border-bottom: 3px solid $mono-9;
+	list-style: none;
+}
+.tabs-item {
+	@include flex-shrink(0);
+	+ .tabs-item {
+		margin-left: $spacing-sm;
+	}
+}
+.tabs-link {
+	color: $mono-6;
+	font-weight: normal;
+	display: block;
+	height: $input-height;
+	padding: $spacing-xxs $spacing-xxs 0;
+	border-bottom: 3px solid transparent;
+	margin-bottom: -3px;
+	&:hover {
+		cursor: pointer;
+		border-color: $mono-6;
+	}
+	.active > &,
+	.now-active > & {
+		color: $mono-2;
+		font-weight: bold;
+		border-color: initial;
+	}
+}
+.tabs-pane {
+	margin-top: $spacing-sm;
+}
+.tabs-content > .tabs-pane {
+	display: none;
+	&.active,
+	&.now-active {
+		display: block;
+	}
+}
+
+.tabs--inverted {
+	border-color: transparent;
+	.tabs-link {
+		color: rgba(white, 0.75);
+		&:hover {
+			color: white;
+			border-color: transparent;
+		}
+	}
+	.now-active > .tabs-link {
+		color: white;
+		border-color: white;
+	}
+}
+.tabs--center {
+	@include justify-content(center);
+}
+.tabs--noWrap {
+	@include flex-wrap(nowrap);
+	@include overflow-x();
+}
+.tabs--vertical {
+	border: none;
+	.tabs-item {
+		width: 100%;
+		+ .tabs-item {
+			margin-left: 0;
+		}
+		&.active,
+		&.now-active {
+			.tabs-link {
+				border-color: initial;
+			}
+		}
+	}
+	.tabs-link {
+		margin-bottom: 0;
+		border-bottom: none;
+		padding-left: $spacing-sm;
+		border-left: 4px solid transparent;
+		@include ellipsis();
+		display: block;
+		&:hover {
+			color: $mono-3;
+		}
+	}
+}
+.tabs--vertical.tabs--inverted {
+	.tabs-link {
+		&:hover {
+			color: white;
+		}
+	}
+}

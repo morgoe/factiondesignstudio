@@ -1,0 +1,66 @@
+.pagination {
+	display: table;
+	margin: $spacing-lg auto;
+	@include clearfix();
+	> li {
+		float: left;
+		> a {
+			display: block;
+			width: 2rem;
+			height: 2rem;
+			line-height: 2rem;
+			box-shadow: inset 0 0 0 1px $mono-9;
+			text-align: center;
+			color: $mono-4;
+			&:hover {
+				background: $mono-9;
+			}
+		}
+		+ li {
+			margin-left: -1px;
+		}
+		&.active {
+			margin-left: $spacing-xxs;
+			margin-right: $spacing-xxs;
+			> a {
+				background: $mono-3;
+				color: white;
+				font-weight: bold;
+				box-shadow: $shadow-hover;
+				border-radius: 0.25rem;
+				transform: scale(1.25);
+			}
+			+ li {
+				margin-left: 0;
+			}
+		}
+		&.disabled {
+			cursor: not-allowed;
+			> a {
+				color: $mono-8;
+				box-shadow: none;
+				pointer-events: none;
+			}
+		}
+		&:first-child,
+		&:last-child {
+			> a {
+				border-radius: 0.25rem;
+			}
+		}
+		&:first-child {
+			margin-right: $spacing-sm;
+		}
+		&:last-child {
+			margin-left: $spacing-sm;
+		}
+		&:nth-child(2) > a {
+			border-top-left-radius: 0.25rem;
+			border-bottom-left-radius: 0.25rem;
+		}
+		&:nth-last-child(2) > a {
+			border-top-right-radius: 0.25rem;
+			border-bottom-right-radius: 0.25rem;
+		}
+	}
+}

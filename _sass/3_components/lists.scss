@@ -1,0 +1,14 @@
+ul,
+ol {
+	list-style: none;
+}
+.list-bullets {
+	list-style: initial;
+	padding-left: $spacing-md;
+	li {
+		margin-top: $spacing-xs;
+	}
+}
+ol.list-bullets {
+	list-style-type: decimal;
+}

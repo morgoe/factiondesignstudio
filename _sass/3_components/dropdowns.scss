@@ -1,0 +1,118 @@
+.dropdown {
+	display: inline-block;
+	position: relative;
+	&.open,
+	&.now-open {
+		> .dropdown-menu {
+			display: block;
+		}
+	}
+}
+.dropdown--up {
+	> .dropdown-menu {
+		top: auto;
+		bottom: 100%;
+	}
+	.button-caret {
+		transform: rotate(180deg);
+	}
+}
+.dropdown--left {
+	> .dropdown-menu {
+		left: 0;
+		right: auto;
+	}
+}
+.dropdown-menu {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	z-index: 1000;
+	display: none;
+	float: left;
+	min-width: 200px;
+	margin-top: $spacing-xs;
+	padding: $spacing-xs;
+	border-radius: $card-borderRadius;
+	box-shadow: $shadow-raised;
+	text-align: left;
+	list-style: none;
+	background-color: white;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+.dropdown-grid {
+	@include flexbox();
+}
+.dropdown-header {
+	color: $mono-6;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: $spacing-xs $spacing-sm;
+}
+.dropdown-item {
+	color: $mono-6;
+	padding: 5px $spacing-sm 0;
+	height: $input-height;
+	.icon {
+		width: 20px;
+		font-size: 20px;
+		position: relative;
+		top: -2px;
+		left: -2px;
+	}
+	.svgIcon {
+		margin-right: $spacing-xxs;
+	}
+}
+.dropdown-item--link {
+	padding: 0;
+}
+.dropdown-link {
+	color: $mono-2;
+	display: block;
+	padding: 5px $spacing-sm 0;
+	border-radius: $borderRadius-sm;
+	height: $input-height;
+	white-space: nowrap;
+	&:hover {
+		cursor: pointer;
+		background: $mono-95;
+	}
+	.now-active > & {
+		font-weight: bold;
+	}
+}
+@for $i from 1 through length($status-colors) {
+	.dropdown-link--#{nth($status-names, $i)} {
+		color: nth($status-colors, $i);
+		&:hover {
+			color: white;
+			background: nth($status-colors, $i);
+		}
+	}
+}
+.dropdown-link--toggle {
+	.icon {
+		opacity: 0;
+	}
+	.now-active > & {
+		color: $blue;
+		.icon {
+			opacity: 1;
+		}
+	}
+	&:hover {
+		background: none;
+		opacity: 0.75;
+		.icon {
+			opacity: 0.25;
+		}
+	}
+}
+.dropdown-divider {
+	height: 1px;
+	margin: $spacing-xs 0;
+	background: $mono-9;
+}

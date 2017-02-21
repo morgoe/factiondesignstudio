@@ -1,0 +1,10 @@
+# Site settings
+title: Faction Design Studio
+email: hello@morgancarter.com.au
+description: We sell fixed price UI/UX Design
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://factiondesignstudio.com" # the base hostname & protocol for your site
+permalink: /:categories/:title
+
+# Build settings
+markdown: kramdown

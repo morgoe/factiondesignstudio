@@ -1,0 +1,53 @@
+.collapse,
+.collapsing {
+	padding-left: $spacing-lg;
+	.flexTable-col:first-child {
+		margin-left: -$spacing-lg;
+		padding-left: $spacing-lg;
+	}
+	.collapse {
+		.flexTable-col:first-child {
+			margin-left: -$spacing-lg * 2;
+			padding-left: $spacing-lg * 2;
+		}
+	}
+}
+.collapse {
+	display: none;
+	&.in {
+		display: block;
+	}
+}
+.collapsing {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	transition: height .35s ease, visibility .35s ease;
+}
+.collapse-button {
+	width: $input-height;
+	padding-left: 0;
+	padding-right: 0;
+	margin-right: $spacing-xs;
+	color: $mono-6;
+	.button-icon {
+		transform: rotate(90deg);
+		transition: 0.35s ease;
+	}
+	&.collapsed {
+		.button-icon {
+			transform: rotate(0deg);
+		}
+	}
+	&:hover,
+	&.active {
+		color: $mono-2;
+		background: $mono-9;
+		box-shadow: none;
+	}
+	.dropdown.now-open > &,
+	&:hover:active {
+		background: $mono-8;
+		box-shadow: none;
+	}
+}

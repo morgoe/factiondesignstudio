@@ -1,0 +1,67 @@
+.form-group {
+	margin-bottom: $spacing-md;
+}
+.form-group--horizontal {
+	@include flexbox();
+	.input + .input {
+		margin-left: $spacing-sm;
+	}
+}
+.form-footer {
+	text-align: right;
+}
+.form-label {
+	display: block;
+    font-size: $fontSize;
+	font-family: $font-system;
+    abbr[title="required"] {
+    	display: none;
+    }
+}
+// .form-label.optional:after,
+// .form-label--optional:after {
+// 	content: "\00a0(Optional)";
+// 	display: inline-block;
+//     font-size: $fontSize-sm;
+//     font-style: italic;
+//     color: $blue;
+//     letter-spacing: $letterSpacing-wide;
+//     @include subpixel-antialiased();
+// }
+// .form-label--inverted {
+// 	color: white;
+// }
+// .form-helperText {
+// 	color: $mono-6;
+// }
+// .form-feedback {
+// 	display: none;
+// 	.now-success &,
+// 	.now-warning &,
+// 	.now-danger & {
+// 		display: block;
+// 	}
+// 	.now-success & {
+// 		color: $green;
+// 	}
+// 	.now-warning & {
+// 		color: $orange;
+// 	}
+// 	.now-danger & {
+// 		color: $red;
+// 	}
+// }
+// fieldset {
+// 	border: 1px solid $mono-9;
+// 	padding: $spacing-md $spacing-md 0;
+// 	margin-top: $spacing-md;
+// 	border-radius: $card-borderRadius;
+// 	legend {
+// 		font-weight: bold;
+// 		font-size: $fontSize-sm;
+// 		text-transform: uppercase;
+// 		padding: 0 $spacing-xs;
+// 		margin-left: -$spacing-xs;
+// 		margin-bottom: -$spacing-sm;
+// 	}
+// }

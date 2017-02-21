@@ -1,0 +1,73 @@
+<section id="contactMe-modal" class="m-modal-wrapper">
+
+	<button id="contactMe-closeModal" class="m-modal-close">×</button>
+
+	<div class="m-modal-animation"></div>
+
+	<div class="m-modal-message">
+		<h3 class="m-modal-messageText padding--sm"></h3>
+	</div>
+
+	<div class="m-modal">
+		<div class="m-modal-body padding--lg">
+			<h2 class="h1 m-modal-title">Contact Me</h2>
+
+			<form id="contactForm" class="container--xs clearfix">
+				<div class="m-input-wrapper">
+					<label class="m-input-label" for="contactForm-name">My name is</label>
+					<div class="m-input">
+						<label class="m-input-placeholder" for="contactForm-name">Name</label>
+						<input id="contactForm-name" name="contactForm-name" type="text" placeholder="Johnny Placeholder">
+					</div>
+					<label class="m-input-error" for="contactForm-name"></label>
+				</div>
+
+				<div class="m-input-wrapper">
+					<label class="m-input-label" for="contactForm-email">My email is</label>
+					<div class="m-input">
+						<label class="m-input-placeholder" for="contactForm-email">Email address</label>
+						<input id="contactForm-email" name="contactForm-email" type="email" placeholder="email@domain.com">
+					</div>
+					<label class="m-input-error" for="contactForm-email">Email address is required!</label>
+				</div>
+
+				<div class="m-input-wrapper">
+					<label class="m-input-label" for="contactForm-message">We're gonna talk about</label>
+					<div class="m-input">
+						<label class="m-input-placeholder" for="contactForm-message">Message</label>
+						<textarea id="contactForm-message" name="contactForm-message" placeholder="making something awesome" rows="1"></textarea>
+					</div>
+					<label class="m-input-error" for="contactForm-message">Email address is required!</label>
+				</div>
+
+				<input id="contactForm-url" name="contactForm-url" type="hidden">
+
+				<div class="u-text--right">
+					<button id="contactForm-submit" class="btn btn--modal" data-text="Submit"></button>
+					<label id="contactForm-error" class="m-input-error u-pullLeft margin--none">Something went wrong!</label>
+				</div>
+			</form>
+
+			<div class="hidden--md-up u-text--center">
+				<em class="m-social-or">or</em>
+			</div>
+
+			<div class="m-social-wrapper margin--sm">
+				<a class="m-social-icon" href="https://twitter.com/morgoe876">
+					<img class="m-social-image" src="/assets/images/contact/twitter.svg">
+				</a>
+				<a class="m-social-icon" href="https://dribbble.com/morgoe">
+					<img class="m-social-image" src="/assets/images/contact/dribbble.svg">
+				</a>
+				<em class="m-social-or hidden--sm">or</em>
+				<a class="m-social-icon m-social-email" href="mailto:hello@morgancarter.com.au">
+					<img class="m-social-image" src="/assets/images/contact/envelope.svg">
+					<span class="m-social-link">
+						hello@morgancarter.com.au
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+</section>

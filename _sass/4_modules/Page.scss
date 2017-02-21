@@ -1,0 +1,28 @@
+.Page {
+
+}
+.Page-title {
+	position: relative;
+	font-weight: 400;
+	&:after {
+		content: "";
+		display: block;
+		width: 100%;
+		border-bottom: 3px solid;
+		position: absolute;
+		bottom: 0.25rem;
+	}
+}
+.Page-header {
+	position: relative;
+	font-weight: 400;
+	&:after {
+		content: "";
+		display: block;
+		width: 100%;
+		border-bottom: 2px solid;
+		position: absolute;
+		bottom: 0;
+		opacity: 0.2;
+	}
+}

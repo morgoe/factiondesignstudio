@@ -1,0 +1,41 @@
+hr {
+	margin: $spacing-xl;
+	height: 1px;
+	border: none;
+	background: rgba($mono-3, 0.1);
+}
+.hr--lg {
+	margin-top: $spacing-xl;
+	margin-bottom: $spacing-xl;
+}
+a {
+	text-decoration: none;
+}
+[disabled] {
+	pointer-events: none;
+	cursor: not-allowed;
+}
+.link {
+	color: $blue;
+	cursor: pointer;
+	border: none;
+	background: none;
+	-webkit-appearance: none;
+	text-decoration: underline;
+	&:visited,
+	&.visited {
+		// color: $purple;
+	}
+}
+img {
+	max-width: 100%;
+	p + & {
+		margin-top: $spacing-sm;
+	}
+}
+::selection {
+	background: rgba($blue, 0.15); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+	background: rgba($blue, 0.15); /* Gecko Browsers */
+}

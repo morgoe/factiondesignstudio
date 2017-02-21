@@ -1,0 +1,61 @@
+.tag {
+	font-weight: bold;
+	font-size: $fontSize-xs;
+	letter-spacing: $letterSpacing-wide;
+	color: $mono-6;
+	border-radius: $borderRadius-sm;
+	padding: 3px $spacing-xs 1px;
+	vertical-align: top;
+	@include ellipsis();
+}
+.tag-remove {
+	font-size: 1rem;
+	line-height: 1;
+	vertical-align: top;
+	color: $mono-6;
+	margin-left: $spacing-xxs;
+	.tag:hover & {
+		color: $mono-3;
+		&:hover {
+			color: $danger;
+		}
+	}
+}
+.tag--link {
+	cursor: pointer;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+.tag--mono {
+	color: $mono-6;
+	background: $mono-95;
+}
+.tag--info {
+	color: $blue;
+	background: rgba($blue, 0.1);
+	&.tag--link:hover {
+		background: rgba($blue, 0.2);
+	}
+}
+.tag--success {
+	color: $green;
+	background: rgba($green, 0.1);
+	&.tag--link:hover {
+		background: rgba($green, 0.2);
+	}
+}
+.tag--warning {
+	color: $orange;
+	background: rgba($orange, 0.1);
+	&.tag--link:hover {
+		background: rgba($orange, 0.2);
+	}
+}
+.tag--danger {
+	color: $red;
+	background: rgba($red, 0.1);
+	&.tag--link:hover {
+		background: rgba($red, 0.2);
+	}
+}

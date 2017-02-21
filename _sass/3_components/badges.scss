@@ -1,0 +1,58 @@
+.badge {
+	display: inline;
+	font-weight: bold;
+	font-style: normal;
+	font-size: $fontSize-xs;
+	letter-spacing: $letterSpacing-wide;
+	text-transform: uppercase;
+	color: white;
+	background: $mono-4;
+	border-radius: 1em;
+	padding: 4px $spacing-xs 3px;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+.badge-icon {
+	@extend .icon;
+	position: relative;
+	top: -2px;
+}
+.badge-icon--start {
+	left: -2px;
+}
+.badge--status {
+	font-size: $fontSize;
+	letter-spacing: normal;
+	text-transform: none;
+	border-radius: $borderRadius-sm;
+}
+.badge--audit {
+	float: left;
+	margin: 2px;
+	padding: 0;
+	font-size: $fontSize;
+	text-align: center;
+	width: 1.5rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	border-radius: $borderRadius-sm;
+	background: $mono-2;
+	&:hover {
+		transform: scale(1.2);
+		opacity: 1 !important;
+	}
+}
+.badge--link {
+	&:hover {
+		text-decoration: underline;
+	}
+}
+@for $i from 1 through length($status-colors) {
+	.badge--#{nth($status-names, $i)} {
+		background: nth($status-colors, $i);
+		&.badge--status {
+			color: nth($status-colors, $i);
+			background: rgba(nth($status-colors, $i), 0.1);
+		}
+	}
+}

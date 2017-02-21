@@ -1,0 +1,80 @@
+.inputGroup {
+	@include flexbox();
+	&:hover {
+		.inputGroup-addon,
+		.inputGroup-button,
+		.inputGroup-input {
+			border-color: $mono-6;
+		}
+	}
+	&.focus {
+		.inputGroup-addon,
+		.inputGroup-button,
+		.inputGroup-input {
+			border-color: $info;
+		}
+		.inputGroup-addon {
+			color: $info;
+		}
+	}
+	&.now-readonly {
+		.inputGroup-addon,
+		.inputGroup-button,
+		.inputGroup-input {
+			border-color: transparent;
+		}
+	}
+}
+.inputGroup-input {
+	&:not(:first-child) {
+		border-left: none;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+	&:not(:last-child) {
+		border-right: none;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+.inputGroup-addon {
+	@include flexbox();
+	@include align-items(center);
+	font-size: $input-fontSize;
+	color: $mono-6;
+	border: 2px solid $mono-8;
+	border-left-width: 0;
+	border-right-width: 0;
+	height: $input-height;
+	&:first-child {
+		border-left-width: 2px;
+		border-top-left-radius: $input-borderRadius;
+		border-bottom-left-radius: $input-borderRadius;
+		padding-left: $spacing-xs;
+	}
+	&:last-child {
+		border-right-width: 2px;
+		border-top-right-radius: $input-borderRadius;
+		border-bottom-right-radius: $input-borderRadius;
+		padding-right: $spacing-xs;
+	}
+}
+.inputGroup-button {
+	border-color: $mono-8;
+	&:not(:first-child) {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+	&:not(:last-child) {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+.inputGroup-addon,
+.inputGroup-button {
+	@for $i from 1 through length($status-colors) {
+		.now-#{nth($status-names, $i)} & {
+			border-color: nth($status-colors, $i);
+		}
+	}
+}

@@ -1,0 +1,34 @@
+/*!
+ * Bootstrap v3.3.1 (http://getbootstrap.com)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+/*!
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=c80b5190f73cffd680e7)
+ * Config saved to config.json and https://gist.github.com/c80b5190f73cffd680e7
+ */
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+.flexGrid {
+	margin-left: -$spacing-xs;
+	margin-right: -$spacing-xs;
+	@include flexbox();
+	@include flex-wrap(wrap);
+}
+.flexGrid-item {
+	position: relative;
+	min-height: 1px;
+	padding-left: $spacing-xs;
+	padding-right: $spacing-xs;
+	width: 100%;
+}
+@media (min-width: $media-md) {
+	.flexGrid {
+		margin-left: -$spacing-sm;
+		margin-right: -$spacing-sm;
+	}
+	.flexGrid-item {
+		padding-left: $spacing-sm;
+		padding-right: $spacing-sm;
+	}
+}

@@ -1,0 +1,109 @@
+.flexTable {
+	margin-top: $spacing-md;
+}
+.flexTable-header {
+	text-align: left;
+	color: $mono-4;
+	font-size: $fontSize-sm;
+	.flexTable-row {
+		padding-bottom: $spacing-xxs;
+	}
+	.flexTable-col {
+		padding-top: 0;
+		padding-bottom: 0;
+		&.active {
+			font-weight: bold;
+		}
+	}
+}
+.flexTable-body {
+	width: 100%;
+	color: $mono-4;
+	.flexTable-col {
+		&.active {
+			font-weight: bold;
+			color: $mono-2;
+		}
+	}
+	> .flexTable-row {
+		padding-top: $spacing-xs;
+	}
+}
+.flexTable-row {
+	@include flexbox();
+	@include flex-grow(1);
+	@include align-items(center);
+	position: relative;
+}
+.flexTable-row--divider {
+	border-top: 1px solid $mono-9;
+	padding-bottom: $spacing-xs;
+}
+.flexTable-link {
+	color: inherit;
+	border-radius: $card-borderRadius;
+	&:hover {
+		cursor: pointer;
+		background: $mono-95;
+		.button {
+			box-shadow: $shadow-hover;
+		}
+		.button--default {
+			background: $mono-95;
+		}
+		.button--primary,
+		.button--success,
+		.button--warning,
+		.button--danger {
+			transform: scale(1.05);
+		}
+	}
+	&:active {
+		background: $mono-9;
+		.button {
+			box-shadow: $shadow-pressed;
+		}
+		.button--primary,
+		.button--success,
+		.button--warning,
+		.button--danger {
+			transform: scale(1);
+			transition: none;
+		}
+	}
+}
+.flexTable-col {
+	width: 100px;
+	@include flex-grow(1);
+	@include align-self(center);
+	padding: $spacing-xs;
+}
+.flexTable-col--noGrow {
+	width: auto;
+	@include flex-grow(0);
+}
+.flexTable-col--xxs {
+	width: 25px;
+}
+.flexTable-col--xs {
+	width: 50px;
+}
+.flexTable-col--sm {
+	width: 75px;
+}
+.flexTable-col--lg {
+	width: 150px;
+	@include flex-grow(1.5);
+}
+.flexTable-col--xl {
+	width: 200px;
+	@include flex-grow(2);
+}
+.flexTable-invisible {
+	height: 0px !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}

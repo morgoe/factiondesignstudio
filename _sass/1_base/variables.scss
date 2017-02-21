@@ -1,0 +1,80 @@
+// Colours
+$mono-3:					#353E4E;
+$yellow:					#FFE800;
+$blue:						#1279D0;
+
+// Typography
+$font-sans:					"Calibre-Web", "Calibre", -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+$font-system:               -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+$font-serif:                "ff-tisa-web-pro", "Tisa Pro", Georgia, serif;
+
+$fontSize:					16px;
+$fontSize-lg:				18px;
+
+$font-lineHeight:           1.333;
+$font-lineHeight--serif:    1.5;
+$font-lineHeight-tight:    	1.2;
+$font-lineHeight-header:    1;
+
+// $letterSpacing-wide:        0.2px;
+$letterSpacing-condensed:   -0.03em;
+
+// Layout
+$spacing-xl:                4rem;
+$spacing-lg:                2rem;
+$spacing-md:                1.5rem;
+$spacing-sm:                1rem;
+$spacing-xs:                0.5rem;
+$spacing-xxs:               0.25rem;
+$spacing-names:             "0", "xxs", "xs", "sm", "md", "lg", "xl";
+$spacing-directions:        "", "-top", "-left", "-right", "-bottom";
+$spacing-amounts:           0, $spacing-xxs, $spacing-xs, $spacing-sm, $spacing-md, $spacing-lg, $spacing-xl;
+
+$container-xl:              1600px;
+$container-lg:              1280px;
+$container-md:              960px;
+$container-sm:              768px;
+$container-xs:              568px;
+
+$media-xl:                  1280px;
+$media-lg:                  1024px;
+$media-md:                  768px;
+$media-sm:                  568px;
+$media-xs:                  400px;
+$media-names:               'xs', 'sm', 'md', 'lg', 'xl';
+$media-amounts:             $media-xs, $media-sm, $media-md, $media-lg, $media-xl;
+
+// Border Radius
+$borderRadius-lg:           1rem;
+$borderRadius-md:           0.5rem;
+$borderRadius-sm:           0.25rem;
+$borderRadius-xs:           0.125rem;
+
+// Forms
+$input-fontSize:            $fontSize;
+$input-height:              2rem;
+$input-borderRadius:        $borderRadius-sm;
+
+// Cards
+$card-borderRadius:         $borderRadius-sm;
+
+// Shadows
+$inset-shadow:				inset 0 1px 3px rgba($mono-3, 0.1);
+$shadow:					0 2px 8px rgba($mono-3, 0.1), 0 8px 32px rgba($mono-3, 0.1);
+$shadow-pressed:			inset 0 0 0 100px rgba(black, 0.25);
+$shadow-hover:				0 2px 8px rgba(black, 0.05), 0 6px 16px rgba(black, 0.05), 0 16px 48px rgba(black, 0.05);
+// Shadows
+// $outline:					inset 0 0 0 2px rgba($mono-3, 0.5);
+
+
+
+// $shadow-raised:				0 2px 8px rgba(black, 0.05), 0 4px 16px rgba(black, 0.05), 0 8px 24px rgba(black, 0.05), 0 16px 32px rgba(black, 0.05), 0 32px 64px rgba(black, 0.05), 0 0 0 1px rgba(black, 0.05);
+
+// Z Index
+$zIndex-Navbar--secondary:  1000;
+$zIndex-Navbar:             1010;
+$zIndex-modalBackdrop:      1020;
+$zIndex-modal:              1030;
+$zIndex-datepicker:         1040;
+$zIndex-tooltip:            1050;
+$zIndex-alertOverlay:       1060;

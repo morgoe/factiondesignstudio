@@ -1,0 +1,88 @@
+.input {
+	display: block;
+	vertical-align: middle;
+	line-height: normal;
+	touch-action: manipulation;
+	white-space: nowrap;
+	background: none;
+	width: 100%;
+	border: 1px solid rgba($mono-3, 0.2);
+	border-radius: $input-borderRadius;
+	box-shadow: $inset-shadow;
+	font-size: $input-fontSize;
+	font-family: $font-system;
+	font-weight: normal;
+	height: $input-height;
+	padding: 1px $spacing-xs;
+	-webkit-appearance: none;
+	&:hover {
+		border-color: rgba($mono-3, 0.4);
+	}
+	&::-webkit-input-placeholder {
+		color: rgba($mono-3, 0.5);
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+		color: rgba($mono-3, 0.5);
+	}
+	&::-moz-placeholder {  /* Firefox 19+ */
+		color: rgba($mono-3, 0.5);
+	}
+	&:-ms-input-placeholder {  
+		color: rgba($mono-3, 0.5);
+	}
+	&:-webkit-autofill {
+		box-shadow: inset 0 0 0 1000px rgba($yellow,0.1), inset 0 0 0 1000px white;
+		border-color: $yellow;
+		&:focus {
+			box-shadow: inset 0 0 0 1000px white;
+			border-color: $blue;
+		}
+	}
+	&:focus {
+		border-color: $blue;
+		outline: none;
+		box-shadow: 0 0 1px 1px rgba($blue, 0.5);
+	}
+	&[readonly] {
+		border-color: transparent !important;
+	}
+}
+// textarea.input {
+// 	height: auto;
+// 	line-height: $font-lineHeight;
+// 	padding-top: 3px;
+// 	white-space: normal;
+// 	resize: vertical;
+// }
+// select.input {
+// 	background-image: image-url("select-drop-down.svg");
+// 	background-size: 24px 24px;
+// 	background-repeat: no-repeat;
+// 	background-position: calc(100% - 0.5em) center;
+// 	&:focus {
+// 		background-image: image-url('select-drop-down-focus.svg');
+// 	}
+// }
+// .input--inverted {
+// 	color: white;
+// 	background: rgba(white, 0.1);
+// 	border-color: rgba(white, 0.6);
+// 	&:hover {
+// 		border-color: rgba(white, 0.8);
+// 	}
+// 	&::-webkit-input-placeholder {
+// 		color: rgba(white, 0.5);
+// 	}
+// 	&:-moz-placeholder { /* Firefox 18- */
+// 		color: rgba(white, 0.5);
+// 	}
+// 	&::-moz-placeholder {  /* Firefox 19+ */
+// 		color: rgba(white, 0.5);
+// 	}
+// 	&:-ms-input-placeholder {  
+// 		color: rgba(white, 0.5);
+// 	}
+// 	&:focus {
+// 		border-color: white;
+// 	}
+// }

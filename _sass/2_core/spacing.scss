@@ -1,0 +1,47 @@
+@for $i from 1 through length($spacing-directions) {
+	@for $j from 1 through length($spacing-names) {
+		.m#{nth($spacing-directions, $i)}--#{nth($spacing-names, $j)} {
+			margin#{nth($spacing-directions, $i)}: #{nth($spacing-amounts, $j)} !important;
+		}
+		.p#{nth($spacing-directions, $i)}--#{nth($spacing-names, $j)} {
+			padding#{nth($spacing-directions, $i)}: #{nth($spacing-amounts, $j)} !important;
+		}
+	}
+}
+
+//  Creates: 
+//  .m--lg {
+// 	    margin: 40px;
+//  }
+//  .m-top--sm {
+// 	    margin-top: 10px;
+//  }
+//  .p-bottom-0 {
+// 	    padding-bottom: 0;
+//  }
+
+@media (max-width: $media-sm) {
+	@for $i from 1 through length($spacing-directions) {
+		@for $j from 4 through length($spacing-names) {
+			.m#{nth($spacing-directions, $i)}--#{nth($spacing-names, $j)} {
+				margin#{nth($spacing-directions, $i)}: #{nth($spacing-amounts, ($j)-1)} !important;
+			}
+			.p#{nth($spacing-directions, $i)}--#{nth($spacing-names, $j)} {
+				padding#{nth($spacing-directions, $i)}: #{nth($spacing-amounts, ($j)-1)} !important;
+			}
+		}
+	}
+}
+
+@media (max-width: $media-xs) {
+	@for $i from 1 through length($spacing-directions) {
+		@for $j from 5 through length($spacing-names) {
+			.m#{nth($spacing-directions, $i)}--#{nth($spacing-names, $j)} {
+				margin#{nth($spacing-directions, $i)}: #{nth($spacing-amounts, ($j)-2)} !important;
+			}
+			.p#{nth($spacing-directions, $i)}--#{nth($spacing-names, $j)} {
+				padding#{nth($spacing-directions, $i)}: #{nth($spacing-amounts, ($j)-2)} !important;
+			}
+		}
+	}
+}

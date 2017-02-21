@@ -1,0 +1,151 @@
+.tooltipster-base {
+	position: absolute;
+	z-index: $zIndex-tooltip;
+	display: block;
+	max-width: 300px;
+	// Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
+	// So reset our font and text properties to avoid inheriting weird values.
+	// @include reset-text;
+	font-weight: normal;
+	font-size: $fontSize-sm;
+	letter-spacing: $letterSpacing-wide;
+	a {
+		text-decoration: underline;
+	}
+}
+.tooltipster-dying {
+	display: none;
+}
+
+// Wrapper for the tooltip content
+.tooltipster-box {
+	padding: 3px $spacing-xs 4px;
+	color: white;
+	background: $mono-2;
+	text-align: center;
+	border-radius: $borderRadius-sm;
+}
+
+// // Arrows
+.tooltipster-arrow-background,
+.tooltipster-arrow-border {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+}
+
+.tooltipster-top {
+	padding: $tooltip-arrowWidth 0;
+	.tooltipster-arrow-background,
+	.tooltipster-arrow-border {
+		left: 50%;
+	}
+	.tooltipster-arrow-background {
+		bottom: 2px;
+		margin-left: -$tooltip-arrowWidth;
+		border-width: $tooltip-arrowWidth $tooltip-arrowWidth 0;
+		border-top-color: $mono-2;
+	}
+	.tooltipster-arrow-border {
+		bottom: 0;
+		margin-left: -#{$tooltip-arrowWidth+1};
+		border-width: #{$tooltip-arrowWidth+1} #{$tooltip-arrowWidth+1} 0; 
+	}
+}
+.tooltipster-left {
+	padding: 0 $tooltip-arrowWidth;
+	.tooltipster-arrow-background,
+	.tooltipster-arrow-border {
+		top: 50%;
+	}
+	.tooltipster-arrow-background {
+		right: 2px;
+		margin-top: -$tooltip-arrowWidth;
+		border-width: $tooltip-arrowWidth 0 $tooltip-arrowWidth $tooltip-arrowWidth;
+		border-left-color: $mono-2;
+	}
+	.tooltipster-arrow-border {
+		right: 0;
+		margin-top: -#{$tooltip-arrowWidth+1};
+		border-width: #{$tooltip-arrowWidth+1} 0 #{$tooltip-arrowWidth+1} #{$tooltip-arrowWidth+1}; 
+	}
+}
+.tooltipster-right {
+	padding: 0 $tooltip-arrowWidth;
+	.tooltipster-arrow-background,
+	.tooltipster-arrow-border {
+		top: 50%;
+	}
+	.tooltipster-arrow-background {
+		left: 2px;
+		margin-top: -$tooltip-arrowWidth;
+		border-width: $tooltip-arrowWidth $tooltip-arrowWidth $tooltip-arrowWidth 0;
+		border-right-color: $mono-2;
+	}
+	.tooltipster-arrow-border {
+		left: 0;
+		margin-top: -#{$tooltip-arrowWidth+1};
+		border-width: #{$tooltip-arrowWidth+1} #{$tooltip-arrowWidth+1} #{$tooltip-arrowWidth+1} 0;
+	}
+}
+.tooltipster-bottom {
+	padding: $tooltip-arrowWidth 0;
+	.tooltipster-arrow-background,
+	.tooltipster-arrow-border {
+		left: 50%;
+	}
+	.tooltipster-arrow-background {
+		top: 2px;
+		margin-left: -$tooltip-arrowWidth;
+		border-width: 0 $tooltip-arrowWidth $tooltip-arrowWidth;
+		border-bottom-color: $mono-2;
+	}
+	.tooltipster-arrow-border {
+		top: 0;
+		margin-left: -#{$tooltip-arrowWidth+1};
+		border-width: 0 #{$tooltip-arrowWidth+1} #{$tooltip-arrowWidth+1};
+	}
+}
+
+.tooltipster--popover {
+	.tooltipster-box {
+		color: inherit;
+		background: white;
+		background: $mono-95;
+		border: 1px solid $mono-9;
+	}
+	&.tooltipster-top {
+		.tooltipster-arrow-border {
+			border-top-color: $mono-9;
+		}
+		.tooltipster-arrow-background {
+			border-top-color: $mono-95;
+		}
+	}
+	&.tooltipster-left {
+		.tooltipster-arrow-border {
+			border-left-color: $mono-9;
+		}
+		.tooltipster-arrow-background {
+			border-left-color: $mono-95;
+		}
+	}
+	&.tooltipster-right {
+		.tooltipster-arrow-border {
+			border-right-color: $mono-9;
+		}
+		.tooltipster-arrow-background {
+			border-right-color: $mono-95;
+		}
+	}
+	&.tooltipster-bottom {
+		.tooltipster-arrow-border {
+			border-bottom-color: $mono-9;
+		}
+		.tooltipster-arrow-background {
+			border-bottom-color: $mono-95;
+		}
+	}
+}

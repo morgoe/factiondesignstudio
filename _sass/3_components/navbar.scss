@@ -1,0 +1,36 @@
+.navbar {
+    @include flexbox();
+}
+.navbar-item {
+
+}
+.navbar-link {
+    display: block;
+    color: white;
+    padding: 9px $spacing-sm 7px;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.navbar-icon {
+    vertical-align: top;
+}
+@media (max-width: $media-md) {
+    .navbar-collapse {
+        position: absolute !important;
+        left: 0;
+        right: 0;
+        top: $Navbar-height;
+        background: $mono-3;
+        padding: 0 !important;
+        .navbar {
+            @include flex-direction(column);
+        }
+    }
+}
+@media (min-width: $media-md) {
+    .navbar-collapse {
+        display: block !important;
+        height: auto !important;
+    }
+}

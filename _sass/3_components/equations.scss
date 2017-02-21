@@ -1,0 +1,35 @@
+.equation {
+	line-height: 1;
+	font-family: $font-serif;
+	@include subpixel-antialiased();
+	sup,
+	sub {
+		font-size: 65%;
+		font-weight: bold;
+		margin-right: 0.1em;
+		@include antialiased();
+	}
+	sup {
+		top: -0.7em;
+	}
+	sub {
+		bottom: -0.35em;
+		left: -0.05em;
+	}
+}
+.equation-symbol {
+	margin: 0 $spacing-xxs;
+}
+.equation--maths {
+	.equation-letter {
+		font-style: italic;
+	}
+}
+.equation--chemistry {
+
+}
+.mdfy-eqn {
+	path {
+		stroke-width: 15px;
+	}
+}

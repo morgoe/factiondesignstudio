@@ -1,0 +1,14 @@
+.wistia_embed {
+	background: white;
+	border-radius: $borderRadius-md;
+	display: block !important;
+	height: 0 !important;
+	width: 100% !important;
+	padding-bottom: 56.25% !important;
+	box-shadow: $shadow;
+	transition: 0.25s;
+	&:hover {
+		box-shadow: $shadow-hover;
+		transform: translateY(-1px);
+	}
+}

@@ -1,0 +1,16 @@
+.animation-blink {
+	@include -webkit-prefix(animation, blink 1s steps(1, end) infinite);
+}
+.animation-blink--short {
+	@include -webkit-prefix(animation, blink 0.2s 2);
+}
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
+}
+@-webkit-keyframes blink {
+	50% {
+		opacity: 0;
+	}
+}

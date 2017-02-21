@@ -1,0 +1,113 @@
+.loader {
+	margin-top: $spacing-xl * 2;
+}
+
+.loader-animation {
+	width: 60px;
+	height: 60px;
+	position: relative;
+	margin: $spacing-sm auto;
+	&:before,
+	&:after {
+		content: "";
+		background-color: $blue;
+		width: 16px;
+		height: 16px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include -webkit-prefix(animation, loader-animation 1.8s infinite ease-in-out);
+	}
+	&:after {
+		@include -webkit-prefix(animation-delay, -0.9s);
+	}
+}
+
+.loader-text {
+	color: $blue;
+	text-align: center;
+	font-size: $fontSize-lg;
+	&:after {
+		content: "…";
+	}
+}
+.loader-text--animate {
+	&:after {
+		content: "Loading…";
+		@include -webkit-prefix(animation, loader-text 2.2s infinite linear);
+	}
+}
+
+@-webkit-keyframes loader-animation {
+	25% {
+		-webkit-transform: translateX(42px) rotate(-90deg) scale(0.5)
+	}
+	50% {
+		-webkit-transform: translateX(42px) translateY(42px) rotate(-180deg)
+	}
+	75% {
+		-webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5)
+	}
+	100% {
+		-webkit-transform: rotate(-360deg)
+	}
+}
+
+@keyframes loader-animation {
+	25% {
+		transform: translateX(42px) rotate(-90deg) scale(0.5);
+		-webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+	}
+	50% {
+		transform: translateX(42px) translateY(42px) rotate(-179deg);
+		-webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+	}
+	50.1% {
+		transform: translateX(42px) translateY(42px) rotate(-180deg);
+		-webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+	}
+	75% {
+		transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+		-webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+	}
+	100% {
+		transform: rotate(-360deg);
+		-webkit-transform: rotate(-360deg);
+	}
+}
+
+@-webkit-keyframes loader-text {
+	0% {
+		content: "Loading\00a0\00a0\00a0";
+	}
+	25% {
+		content: "Loading.\00a0\00a0";
+	}
+	50% {
+		content: "Loading..\00a0";
+	}
+	75% {
+		content: "Loading...";
+	}
+	100% {
+		content: "Loading\00a0\00a0\00a0";
+	}
+}
+
+@keyframes loader-text {
+	0% {
+		content: "Loading\00a0\00a0\00a0";
+	}
+	25% {
+		content: "Loading.\00a0\00a0";
+	}
+	50% {
+		content: "Loading..\00a0";
+	}
+	75% {
+		content: "Loading...";
+	}
+	100% {
+		content: "Loading\00a0\00a0\00a0";
+	}
+}
