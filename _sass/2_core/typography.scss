@@ -71,6 +71,8 @@ p {
 	}
 }
 mark {
+	position: relative;
+	z-index: -1;
     color: inherit;
     background: $yellow;
     padding: 6px 4px 0;
