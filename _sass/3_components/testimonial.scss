@@ -20,13 +20,25 @@
 	font-size: 2rem;
 }
 .testimonial-excerpt {
+	position: relative;
 	max-width: $container-xs;
 	margin-left: auto;
 	margin-right: auto;
+	transform: rotate(-1.5deg);
 }
 .testimonial-quote {
 	font-family: $font-serif;
 	font-size: $fontSize;
+}
+.testimonial-goo {
+	position: absolute;
+	top: 0;
+	margin: 0;
+	color: $blue-light;
+	-webkit-text-stroke: 20px;
+	z-index: -1;
+	opacity: 0.2;
+	filter:url("#goo");
 }
 .testimonial-author {
 	margin-top: $spacing-xxs;
