@@ -23,7 +23,7 @@
 
 // Components
 @import "3_components/defaults";
-// @import "3_components/lists";
+@import "3_components/lists";
 // @import "3_components/code";
 // @import "3_components/keyboardControls";
 // @import "3_components/equations";
@@ -66,12 +66,14 @@
 @import "4_modules/Header";
 @import "4_modules/Canvas";
 @import "4_modules/Page";
+@import "4_modules/Footer";
 
 // Utilities
 // @import "5_utilities/display";
 // @import "5_utilities/layout";
 // @import "5_utilities/color";
 // @import "5_utilities/float";
+@import "5_utilities/screenReader";
 @import "5_utilities/typography";
 
 .noSelect {

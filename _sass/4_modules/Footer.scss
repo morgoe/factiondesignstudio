@@ -1,0 +1,23 @@
+.Footer {
+	@include flexbox();
+	@include align-items(center);
+	border-top: 1px solid rgba($mono-3, 0.1);
+	font-weight: 500;
+	font-size: $fontSize;
+	font-family: $font-system;
+	padding: $spacing-md 0;
+}
+.Footer-socialLink {
+	display: block;
+	width: 1.5rem;
+	height: 1.5rem;
+	&:hover {
+		opacity: 0.75;
+	}
+	&:active {
+		opacity: 0.5;
+	}
+}
+.Footer-logo {
+	margin-left: $spacing-sm;
+}

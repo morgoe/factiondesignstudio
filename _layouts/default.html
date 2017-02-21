@@ -4,17 +4,9 @@
 	{% include head.html %}
 
 	<body {% if page.body-id %}id="{{ page.body-id }}"{% endif %}>
-		<div class="Canvas">
-			<div class="container">
-	
-				{% include header.html %}
+		{{ content }}
 
-				{{ content }}	
-
-				{% include foot.html %}
-
-			</div>
-		</div>
+		{% include foot.html %}
 	</body>
 
 </html>

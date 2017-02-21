@@ -1,5 +1,11 @@
 .Page {
-
+	@include flexbox();
+	@include flex-direction(column);
+	min-height: calc(100vh - #{$spacing-sm} * 2);
+	transition: 0.25s ease-in-out;
+}
+.Page-content {
+	@include flex-grow(1);
 }
 .Page-title {
 	position: relative;
