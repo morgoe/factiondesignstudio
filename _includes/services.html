@@ -1,0 +1,20 @@
+<section class="container container--sm m-bottom--xl">
+	<ul class="Services-list m-page-content padding">
+		{% for post in site.categories['services'] %}
+			<li class="Services-item">
+				<a class="card card--link p--sm Services-link" href="{{ post.url | prepend: site.baseurl }}">
+					<div class="media">
+						<img class="media-image" src="/assets/images/{{post.thumbnail}}">
+						<div class="media-body">
+							<header class="media-header">
+								<h3 class="media-title Services-title">{{ post.title }}</h3>
+							</header>
+							<div class="Services-price">From ${{ post.price }}</div>
+							<div class="Services-description m-top--sm">{{ post.description }}</div>
+						</div>
+					</div>
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</section>

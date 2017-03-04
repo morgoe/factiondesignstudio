@@ -1,0 +1,107 @@
+---
+layout: default
+body-id: services
+---
+
+<div class="Canvas">
+	<form class="container Page Service js-serviceCheckout-form">
+		{% include header.html %}
+
+		<div class="Page-content container container--md">
+			<img class="Service-image" src="/assets/images/{{page.image}}">
+			<h1 class="Service-title">Customise your {{ page.title }}</h1>
+			
+			<section class="Service-content Essay p-top--md">
+				{{ content }}
+			</section>
+
+			<h3 class="text-regular m-top--md">{{ page.questions.size }} Questions</h3>
+			<div class="flexGrid">
+				<div class="flexGrid-item when-md-8">
+					{% for question in page.questions %}
+						<div class="form-group m-top--md">
+							<label class="form-label">{{ question }}</label>
+							<textarea class="input js-serviceCheckout-input" name="{{ question }}" placeholder="Write your answer here..." rows="3"></textarea>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="flexGrid-item when-md-4 testimonial-list">
+					<div class="testimonial">
+						<div class="testimonial-excerpt">
+							<p class="testimonial-quote">To take an idea from a concept to a user-friendly design, and then to production-ready code, is a uniquely valuable asset.</p>
+							<p class="testimonial-quote testimonial-goo">To take an idea from a concept to a user-friendly design, and then to production-ready code, is a uniquely valuable asset.</p>
+							<div class="testimonial-author">–Peter Cassidy, CPO of Stackla</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="flexGrid">
+				<div class="flexGrid-item when-md-8 when-md-push-4">
+					<h3 class="text-regular m-top--md">Optional Extras</h3>
+				</div>
+			</div>
+			<div class="flexGrid">
+				<div class="flexGrid-item when-md-8 when-md-push-4">
+					{% for extra in page.extras %}
+						<div class="m-top--md m-bottom--lg">
+							<h4 class="text-regular">{{ extra.name }}</h4>
+							<a>{{ extra.info-text }}</a>
+							{% for option in page[extra.reference] %}
+								<label class="radioOption">
+									<input type="radio" name="{{ extra.reference }}" value="{{ option.value }}" class="js-serviceCheckout-option" data-price="{{ option.price }}" {% if option.checked %} checked="checked" {% endif %}>
+									<div class="radioOption-frame">
+										<i class="radioOption-checkbox"></i>
+										<div class="radioOption-body">
+											<div class="radioOption-title">{{ option.title }}</div>
+											<div class="radioOption-description">{{ option.description }}</div>
+										</div>
+										<div class="radioOption-price js-serviceCheckout-optionPrice">{{ option.price-pretty }}</div>
+									</div>
+								</label>
+							{% endfor %}
+						</div>
+					{% endfor %}
+				</div>
+				<div class="flexGrid-item when-md-4 when-md-pull-8 testimonial-list">
+					<!-- <div class="testimonial">
+						<div class="testimonial-excerpt">
+							<p class="testimonial-quote">I just wanted to say how much I love the new-look Deputy web client. You guys have obviously spent a lot of time thinking about the design of the app and it shows. Well done!</p>
+							<p class="testimonial-quote testimonial-goo">I just wanted to say how much I love the new-look Deputy web client. You guys have obviously spent a lot of time thinking about the design of the app and it shows. Well done!</p>
+							<div class="testimonial-author">–Jason Tait, Deputy customer</div>
+						</div>
+					</div>
+					<div class="testimonial">
+						<div class="testimonial-excerpt">
+							<p class="testimonial-quote">I just wanted to say how much I love the new-look Deputy web client. You guys have obviously spent a lot of time thinking about the design of the app and it shows. Well done!</p>
+							<p class="testimonial-quote testimonial-goo">I just wanted to say how much I love the new-look Deputy web client. You guys have obviously spent a lot of time thinking about the design of the app and it shows. Well done!</p>
+							<div class="testimonial-author">–Jason Tait, Deputy customer</div>
+						</div>
+					</div> -->
+				</div>
+			</div>
+
+			<img class="Service-arrow" src="/assets/images/services/arrow.svg">
+		</div>
+
+		<footer class="ServiceFooter">
+			<div class="container container--md ServiceFooter-container">
+				<section class="ServiceFooter-help">
+					<img class="ServiceFooter-chatIcon" src="/assets/icons/chat.svg">
+					<div>
+						<div>Confused?</div>
+						<a class="js-openChat">Chat Now</a>
+						<div>or call 0426 395 232</div>
+					</div>
+				</section>
+				<section class="ServiceFooter-next">
+					<div class="ServiceFooter-price">
+						Total cost:
+						$<span class="js-serviceCheckout-price">{{ page.price }}</span>
+					</div>
+    				<button class="button m-left--sm js-serviceCheckout-submit">Submit</button>
+				</section>
+			</div>
+		</footer>
+	</form>
+</div>

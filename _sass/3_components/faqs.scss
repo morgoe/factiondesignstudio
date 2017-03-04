@@ -1,0 +1,12 @@
+.faq {
+	margin-top: $spacing-md;
+	+ .faq {
+	}
+}
+.faq-question {
+	font-weight: 600;
+}
+.faq-answer {
+	font-size: $fontSize;
+	@extend .text-serif;
+}

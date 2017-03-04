@@ -25,12 +25,12 @@ h5, .h5 {
 }
 h1,
 .h1 {
-	font-size: 3rem;
+	font-size: 2rem;
 	font-weight: bold;
 }
 h2,
 .h2 {
-	font-size: 2rem;
+	font-size: 1.75rem;
 	font-weight: bold;
 }
 h3,
@@ -51,6 +51,7 @@ h5,
 }
 .text-serif {
 	font-family: $font-serif;
+	line-height: $font-lineHeight--serif;
 }
 .text-lg {
 	font-size: 1.25rem;
@@ -74,7 +75,7 @@ mark {
 	position: relative;
 	z-index: -1;
     color: inherit;
-    background: $yellow;
+    background: rgba($yellow, 0.5);
     padding: 0 4px;
     margin: 0 -4px;
 }
@@ -118,6 +119,13 @@ mark {
 // .text-title--noBorder {
 // 	border-bottom: none !important;
 // }
+
+@media (min-width: $media-sm) {
+	h1,
+	.h1 {
+		font-size: 3rem;
+	}
+}
 
 @media (min-width: $media-md) {
 	html {

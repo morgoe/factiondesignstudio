@@ -1,0 +1,54 @@
+.ServiceFooter {
+	background: white;
+	border-top: 1px solid rgba($mono-3, 0.1);
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: $spacing-xs $spacing-sm;
+}
+.ServiceFooter-container {
+	@include flexbox();
+	@include align-items(center);
+	@include justify-content(space-between);
+}
+.ServiceFooter-help {
+	display: none;
+	@include align-items(flex-start);
+}
+.ServiceFooter-chatIcon {
+	width: 24px;
+	height: 24px;
+	margin-right: $spacing-xxs;
+	margin-top: $spacing-xxs;
+}
+.ServiceFooter-next {
+	@include flexbox();
+	@include align-items(center);
+	margin-left: auto;
+}
+.ServiceFooter-price {
+	font-size: 1.25rem;
+}
+@media (min-width: $media-sm) {
+	.ServiceFooter-help {
+		@include flexbox();	
+	}
+}
+@media (min-width: $media-sm) {
+	.ServiceFooter {
+		padding-left: $spacing-md;
+		padding-right: $spacing-md;
+	}
+}
+@media (min-width: $media-md) {
+	.ServiceFooter {
+		padding: $spacing-sm $spacing-lg;
+	}
+}
+@media (min-width: $media-lg) {
+	.ServiceFooter {
+		padding-left: $spacing-xl;
+		padding-right: $spacing-xl;
+	}
+}

@@ -1,0 +1,42 @@
+.Services {
+
+}
+.Services-item {
+	+ .Services-item {
+		margin-top: $spacing-xl;
+	}
+}
+.Services-link {
+	color: inherit;
+	&:hover {
+		.Services-title {
+			color: $blue;
+			&:after {
+				opacity: 0.5;
+			}
+		}
+	}
+}
+.Services-title {
+	position: relative;
+	z-index: 1;
+	text-shadow: -3px 1px white, 3px 1px white;
+	transition: 0.2s ease-in;
+	&:after {
+		content: "";
+		display: block;
+		width: 100%;
+		border-bottom: 3px solid;
+		position: absolute;
+		bottom: 0;
+		opacity: 0.25;
+		z-index: -1;
+		transition: opacity 0.2s ease-in;
+	}
+}
+.Services-price {
+	font-size: 1.5rem;
+}
+.Services-description {
+	font-size: $fontSize-lg;
+}

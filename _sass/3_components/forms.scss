@@ -1,5 +1,5 @@
 .form-group {
-	margin-bottom: $spacing-md;
+	margin-bottom: $spacing-lg;
 }
 .form-group--horizontal {
 	@include flexbox();
@@ -14,6 +14,7 @@
 	display: block;
     font-size: $fontSize;
 	font-family: $font-system;
+	margin-bottom: $spacing-xxs;
     abbr[title="required"] {
     	display: none;
     }

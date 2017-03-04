@@ -1,5 +1,12 @@
+.testimonial-list {
+	@include flexbox();
+	@include flex-direction(column);
+	@include justify-content(space-around);
+	.testimonial {
+		margin: $spacing-md 0;
+	}
+}
 .testimonial {
-
 }
 .testimonial-header {
 	text-align: center;
@@ -25,6 +32,9 @@
 	margin-left: auto;
 	margin-right: auto;
 	transform: rotate(-1.5deg);
+	// .testimonial:nth-child(2) & {
+	// 	transform: rotate(2deg);
+	// }
 }
 .testimonial-quote {
 	font-family: $font-serif;

@@ -9,7 +9,12 @@ hr {
 	margin-bottom: $spacing-xl;
 }
 a {
+	color: $blue;
 	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
 }
 [disabled] {
 	pointer-events: none;

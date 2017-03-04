@@ -8,7 +8,7 @@
 	width: 100%;
 	border: 1px solid rgba($mono-3, 0.2);
 	border-radius: $input-borderRadius;
-	box-shadow: $inset-shadow;
+	box-shadow: $shadow-input;
 	font-size: $input-fontSize;
 	font-family: $font-system;
 	font-weight: normal;
@@ -47,13 +47,13 @@
 		border-color: transparent !important;
 	}
 }
-// textarea.input {
-// 	height: auto;
-// 	line-height: $font-lineHeight;
-// 	padding-top: 3px;
-// 	white-space: normal;
-// 	resize: vertical;
-// }
+textarea.input {
+	height: auto;
+	line-height: $font-lineHeight;
+	padding-top: 7px;
+	white-space: normal;
+	resize: vertical;
+}
 // select.input {
 // 	background-image: image-url("select-drop-down.svg");
 // 	background-size: 24px 24px;

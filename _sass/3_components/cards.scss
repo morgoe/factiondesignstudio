@@ -4,23 +4,28 @@
 	box-shadow: $shadow;
 	border-radius: $borderRadius-lg;
 }
-// .card--link {
-// 	transition: 0.2s ease-in;
-// 	&:hover,
-// 	&.active {
-// 		box-shadow: $shadow-hover;
-// 		transform: translateY(-1px);
-// 	}
-// 	.dropdown.now-open > &,
-// 	&:hover:active {
-// 		transition: none;
-// 		transform: translateY(0px);
-// 	}
-// 	&[disabled] {
-// 		background: $mono-95;
-// 		box-shadow: none;
-// 		&:hover {
-// 			box-shadow: none;
-// 		}
-// 	}
-// }
+.card--link {
+	transition: 0.2s ease-in;
+	&:hover,
+	&.active {
+		box-shadow: $shadow-hover;
+		transform: translateY(-1px);
+		text-decoration: none;
+	}
+	&:hover:active {
+		transition: none;
+		box-shadow: none;
+		transform: translateY(1px);
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			border-radius: $borderRadius-lg;
+			box-shadow: $shadow-pressed;
+			z-index: 1;
+		}
+	}
+}

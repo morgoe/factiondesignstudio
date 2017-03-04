@@ -1,0 +1,61 @@
+---
+layout: default
+body-id: services
+---
+
+<div class="Canvas">
+	<div class="container Page Service">
+		{% include header.html %}
+
+		<div class="Page-content container container--md">
+			<img class="Service-image" src="/assets/images/{{page.image}}">
+			<h1 class="Service-title">{{ page.title }}</h1>
+			
+			<section class="Service-content Essay p-top--md">
+				{{ content }}
+			</section>
+
+			<h3 class="text-regular m-top--md">FAQ's</h3>
+			<div class="flexGrid">
+				<div class="flexGrid-item when-md-8">
+					<ul class="faq-list">
+						{% for faq in page.faqs %}
+							<li class="faq">
+								<div class="faq-question">{{ faq.question }}</div>
+								<div class="faq-answer">{{ faq.answer }}</div>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="flexGrid-item when-md-4 testimonial-list">
+					<div class="testimonial">
+						<div class="testimonial-excerpt">
+							<p class="testimonial-quote">All your designs and updates on the product are still running it!! #milage</p>
+							<p class="testimonial-quote testimonial-goo">All your designs and updates on the product are still running it!! #milage</p>
+							<div class="testimonial-author">–Ashik Ahmed, CEO of Deputy</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<img class="Service-arrow" src="/assets/images/services/arrow.svg">
+		</div>
+
+		<footer class="ServiceFooter">
+			<div class="container container--md ServiceFooter-container">
+				<section class="ServiceFooter-help">
+					<img class="ServiceFooter-chatIcon" src="/assets/icons/chat.svg">
+					<div>
+						<div>Confused?</div>
+						<a class="js-openChat">Chat Now</a>
+						<div>or call 0426 395 232</div>
+					</div>
+				</section>
+				<section class="ServiceFooter-next">
+					<div class="ServiceFooter-price">from ${{ page.price }}</div>
+					<a class="button m-left--sm" href="{{ page.checkout_url }}">Next</a>
+				</section>
+			</div>
+		</footer>
+	</div>
+</div>

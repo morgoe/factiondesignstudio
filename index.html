@@ -4,12 +4,13 @@ siteNav: home
 body-id: home
 ---
 
-<section class="text-center container container--sm m-top--xl m-bottom--xl">
-	<p class="text-serif text-xl">We turn complex ideas into intuitive, beautiful products.</p>
-
-	<p class="text-serif text-xl">In just 1 week.</p>
-
-	<p class="text-serif text-xl">From just $2000.</p>
+<section class="text-center container container--md m-top--xl m-bottom--xl">
+	<div class="text-xl">We turn complex ideas into intuitive, beautiful products.</div>
+	
+	<div class="Home-video m-top--lg">
+		<video class="Home-screen" src="/assets/images/home.mp4" loop autoplay playsinline></video>
+		<img class="Home-laptop" src="/assets/images/laptop.png">
+	</div>
 </section>
 
 <section class="testimonial m-bottom--xl">
@@ -17,7 +18,7 @@ body-id: home
 		<h2 class="testimonial-title">Love the fresh, fast new web interface!</h2>
 		<h5 class="testimonial-subtitle">
 			Deputy went from 40,000 users to 
-			<mark>270,000</mark>
+			<mark data-text="270,000">270,000</mark>
 			in less than a year.
 		</h5>
 	</header>
@@ -28,4 +29,4 @@ body-id: home
 	</div>
 </section>
 
-{% include newsletter.html %}
+{% include services.html %}

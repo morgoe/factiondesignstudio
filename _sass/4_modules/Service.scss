@@ -1,0 +1,55 @@
+.Service {
+	padding-bottom: 7rem;
+}
+.Service-image {
+	width: 6rem;
+	height: 6rem;
+	float: left;
+}
+.Service-title {
+	margin-left: 6rem;
+	padding-left: $spacing-sm;
+}
+.Service-content {
+	clear: both;
+	max-width: $media-md;
+}
+.Service-arrow {
+	width: 200px;
+	float: right;
+	margin-right: $spacing-sm;
+}
+
+@media (min-width: $media-sm) {
+	.Service-image {
+		width: 8rem;
+		height: 8rem;
+		float: left;
+	}
+}
+@media (min-width: $media-md) {
+	.Service-image {
+		width: 10rem;
+		height: 10rem;
+	}
+	.Service-title {
+		margin-left: 10rem;
+		padding-left: $spacing-sm;
+	}
+	.Service-content {
+		clear: none;
+		margin-left: 10rem;
+		padding-left: $spacing-sm;
+		padding-right: $spacing-sm;
+	}
+}
+@media (min-width: $media-lg) {
+	.Service-image {
+		width: 14rem;
+		height: 14rem;
+	}
+	.Service-title,
+	.Service-content {
+		margin-left: 14rem;
+	}
+}

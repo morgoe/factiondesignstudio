@@ -1,0 +1,42 @@
+.Essay {
+	ol,
+	ul {
+		margin-top: $spacing-sm;
+		padding-left: $spacing-md;
+		li {
+			margin-top: $spacing-xs;
+		}
+	}
+	ol {
+		list-style: decimal;
+	}
+	ul {
+		list-style: initial;
+	}
+	em {
+		font-style: normal;
+		@extend mark;
+	}
+	strong {
+		font-weight: 600;
+	}
+	h2,
+	h3,
+	h4 {
+		font-weight: normal;
+		margin-top: 1em;
+	}
+	> p:first-child {
+		font-size: 1.4rem;
+	}
+}
+
+@media (min-width: $media-md) {
+	.Essay {
+		h2,
+		h3,
+		h4 {
+			margin-top: 1.5em;
+		}
+	}
+}
