@@ -12,7 +12,7 @@
 		transform: translateY(-1px);
 		text-decoration: none;
 	}
-	&:hover:active {
+	&:active {
 		transition: none;
 		box-shadow: none;
 		transform: translateY(1px);
@@ -26,6 +26,7 @@
 			border-radius: $borderRadius-lg;
 			box-shadow: $shadow-pressed;
 			z-index: 1;
+			pointer-events: none;
 		}
 	}
 }

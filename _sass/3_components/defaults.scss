@@ -1,3 +1,11 @@
+*,
+*:before,
+*:after {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+	touch-action: manipulation;
+}
 hr {
 	margin: $spacing-xl;
 	height: 1px;

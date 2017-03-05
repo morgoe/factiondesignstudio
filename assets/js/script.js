@@ -1,3 +1,8 @@
+/* Make CSS :active work on mobile */
+document.addEventListener("touchstart", function() {},false);
+
+
+
 /* Drift Live Chat */
 !function() {
 	var t;
@@ -26,6 +31,7 @@ drift.on('ready', function(api) {
         api.sidebar.open();
     });
 });
+
 
 
 /* Google Analytics */
