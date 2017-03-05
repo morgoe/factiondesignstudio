@@ -46,7 +46,7 @@ body-id: services
 					{% for extra in page.extras %}
 						<div class="m-top--md m-bottom--lg">
 							<h4 class="text-regular">{{ extra.name }}</h4>
-							<a>{{ extra.info-text }}</a>
+							<!-- <a>{{ extra.info-text }}</a> -->
 							{% for option in page[extra.reference] %}
 								<label class="radioOption">
 									<input type="radio" name="{{ extra.reference }}" value="{{ option.value }}" class="js-serviceCheckout-option" data-price="{{ option.price }}" {% if option.checked %} checked="checked" {% endif %}>
@@ -62,22 +62,6 @@ body-id: services
 							{% endfor %}
 						</div>
 					{% endfor %}
-				</div>
-				<div class="flexGrid-item when-md-4 when-md-pull-8 testimonial-list">
-					<!-- <div class="testimonial">
-						<div class="testimonial-excerpt">
-							<p class="testimonial-quote">I just wanted to say how much I love the new-look Deputy web client. You guys have obviously spent a lot of time thinking about the design of the app and it shows. Well done!</p>
-							<p class="testimonial-quote testimonial-goo">I just wanted to say how much I love the new-look Deputy web client. You guys have obviously spent a lot of time thinking about the design of the app and it shows. Well done!</p>
-							<div class="testimonial-author">–Jason Tait, Deputy customer</div>
-						</div>
-					</div>
-					<div class="testimonial">
-						<div class="testimonial-excerpt">
-							<p class="testimonial-quote">I just wanted to say how much I love the new-look Deputy web client. You guys have obviously spent a lot of time thinking about the design of the app and it shows. Well done!</p>
-							<p class="testimonial-quote testimonial-goo">I just wanted to say how much I love the new-look Deputy web client. You guys have obviously spent a lot of time thinking about the design of the app and it shows. Well done!</p>
-							<div class="testimonial-author">–Jason Tait, Deputy customer</div>
-						</div>
-					</div> -->
 				</div>
 			</div>
 

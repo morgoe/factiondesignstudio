@@ -6,10 +6,12 @@
 					<div class="media">
 						<img class="media-image" src="/assets/images/{{post.thumbnail}}">
 						<div class="media-body">
-							<header class="media-header">
-								<h3 class="media-title Services-title">{{ post.title }}</h3>
+							<header class="media-header Services-header">
+								<div class="media-headline">
+									<h3 class="media-title Services-title">{{ post.title }}</h3>
+								</div>
+								<div class="Services-price">From ${{ post.price }}</div>
 							</header>
-							<div class="Services-price">From ${{ post.price }}</div>
 							<div class="Services-description m-top--sm">{{ post.description }}</div>
 						</div>
 					</div>
