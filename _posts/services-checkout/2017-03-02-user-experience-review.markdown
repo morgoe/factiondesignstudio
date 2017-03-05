@@ -69,6 +69,6 @@ present:
 
 1. **You have an existing website or application:** Done! We're already a third of the way there.
 
-2. **You answer 10 questions about your product:** This will help us identify your goals and expectations.
+2. **You answer 7 questions about your product:** This will help us identify your goals and expectations.
 
-3. **We'll get back to you within 3 days:** We can discuss the extras you'd like to include and finalise payment.
+3. **We'll get back to you within 3 days:** We can discuss the extras you'd like to include, finalise payment and organise a start date.
