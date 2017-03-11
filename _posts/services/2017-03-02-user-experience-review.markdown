@@ -33,7 +33,7 @@ faqs:
 
 You focus on what’s right with your product, but your customers focus on what’s wrong. The kinks you learn to overlook become pitfalls that drive your customers away.
 
-_The Express UX Review will let you experience your product from your customers' eyes_. You’ll have short-term fixes you can implement immediately, and a roadmap for longer-term improvements.
+***The Express UX Review will let you experience your product from your customers' eyes***. You’ll have short-term fixes you can implement immediately, and a roadmap for longer-term improvements.
 
 
 #### What you get

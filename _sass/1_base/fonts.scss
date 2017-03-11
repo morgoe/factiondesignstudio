@@ -7,6 +7,13 @@
 }
 @font-face {
     font-family: 'Calibre-Web';
+    src: url('/assets/fonts/Calibre_Regular_Italic.woff2') format('woff2'),
+         url('/assets/fonts/Calibre_Regular_Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Calibre-Web';
     src: url('/assets/fonts/Calibre_Semibold.woff2') format('woff2'),
          url('/assets/fonts/Calibre_Semibold.woff') format('woff');
     font-weight: 600;

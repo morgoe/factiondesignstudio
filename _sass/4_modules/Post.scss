@@ -1,0 +1,81 @@
+.Post {
+
+}
+.Post-content {
+
+	h2,
+	h3,
+	h4,
+	p,
+	ol,
+	ul {
+		max-width: $container-sm;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+.Post-image {
+
+}
+.Post-secret {
+	position: relative;
+	margin-bottom: 4rem;
+	&:before,
+	&:after {
+		margin: auto;
+		animation: secret-bounce 2s infinite alternate ease-in-out;
+	}
+	&:before {
+		content: attr(data-text-mobile);
+		display: table;
+		font-size: $fontSize;
+		color: white;
+		background: $blue;
+		padding: 2px 10px 3px;
+		border-radius: 6px;
+		margin-bottom: 15px;
+	}
+	&:after {
+		content: "";
+		width: 0;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-top: 8px solid $blue;
+		position: absolute;
+		top: 25px;
+		left: 0;
+		right: 0;
+	}
+	&:hover,
+	&.now-revealed {
+		&:before,
+		&:after {
+			opacity: 0;
+		}
+		.Post-secretText {
+			filter: blur(0px);
+			background: rgba($blue, 0.1);
+		}
+	}
+}
+.Post-secretText {
+	display: table;
+	padding: 0 6px;
+	border-radius: 6px;
+	filter: blur(10px);
+	transition: 0.25s;
+	cursor: default;
+}
+@media (min-width: $media-md) {
+	.Post-secret {
+		&:before {
+			content: attr(data-text-desktop);
+		}
+	}
+}
+
+@-webkit-keyframes secret-bounce { 
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(5px); }
+  100%  { transform: translateY(0px); }
+}

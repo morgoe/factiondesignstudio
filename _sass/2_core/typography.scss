@@ -59,11 +59,6 @@ h5,
 .text-xl {
 	font-size: 1.5rem;
 }
-// h6,
-// .h6 {
-// 	font-size: $fontSize-sm;
-// 	font-weight: bold;
-// }
 p {
 	margin-top: 1em;
 	max-width: $container-sm;
@@ -79,46 +74,6 @@ mark {
     padding: 0 4px;
     margin: 0 -4px;
 }
-// strong {
-// 	font-weight: bold;
-// }
-// .text-lg {
-// 	font-size: 1.25rem;
-// }
-// .text-subtitle {
-// 	font-weight: 400;
-// 	font-style: italic;
-// 	color: $mono-6;
-// }
-// .text-jumbo {
-// 	color: $mono-3;
-// 	font-size: 3rem;
-// 	font-weight: 600;
-// 	letter-spacing: $letterSpacing-condensed;
-// 	margin-bottom: $spacing-lg;
-// 	+ .text-subtitle {
-// 		color: $blue;
-// 		margin-top: -$spacing-lg;
-// 		margin-bottom: $spacing-lg;
-// 		&:before {
-// 			content: "—";
-// 		}
-// 	}
-// }
-// .text-title {
-// 	font-weight: normal;
-// 	font-style: italic;
-// 	color: $mono-4;
-// 	padding: $spacing-xxs;
-// 	border-bottom: 1px solid $mono-9;
-// 	margin-top: 1em;
-// 	&:first-child {
-// 		margin-top: 0;
-// 	}
-// }
-// .text-title--noBorder {
-// 	border-bottom: none !important;
-// }
 
 @media (min-width: $media-sm) {
 	h1,
@@ -153,45 +108,4 @@ mark {
 	.h4 {
 		font-size: 1.5rem;
 	}
-	// h1,
-	// .h1 {
-	// 	font-size: 1.75rem;
-	// 	font-weight: bold;
-	// }
-	// h2,
-	// .h2 {
-	// 	font-size: 1.5rem;
-	// 	font-weight: bold;
-	// }
-	// h3,
-	// .h3 {
-	// 	font-size: 1.25rem;
-	// 	font-weight: bold;
-	// }
-	// .text-lg {
-	// 	font-size: 1.125rem;
-	// }
-	// .text-jumbo {
-	// 	font-size: 2.5rem;
-	// }
 }
-// @media (max-width: $media-sm) {
-// 	.text-jumbo {
-// 		font-size: 2rem;
-// 		margin-bottom: $spacing-md;
-// 		+ .text-subtitle {
-// 			margin-top: -$spacing-md;
-// 		}
-// 	}
-// 	.text-lg {
-// 		font-size: 1rem;
-// 	}
-// }
-// @media (max-width: $media-xs) {
-// 	.text-jumbo {
-// 		margin-bottom: $spacing-sm;
-// 		+ .text-subtitle {
-// 			margin-top: -$spacing-sm;
-// 		}
-// 	}
-// }

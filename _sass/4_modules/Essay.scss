@@ -2,7 +2,7 @@
 	ol,
 	ul {
 		margin-top: $spacing-sm;
-		padding-left: $spacing-md;
+		padding-left: $spacing-sm;
 		li {
 			margin-top: $spacing-xs;
 		}
@@ -14,6 +14,9 @@
 		list-style: initial;
 	}
 	em {
+	}
+	strong em,
+	em strong {
 		font-style: normal;
 		@extend mark;
 	}
@@ -24,10 +27,36 @@
 	h3,
 	h4 {
 		font-weight: normal;
+		font-style: italic;
+
+		border-bottom: 1px solid;
+		border-bottom: 1px solid rgba($mono-3, 0.3);
+		padding: 2px 6px;
 		margin-top: 1em;
+		margin-bottom: $spacing-xs;
 	}
 	> p:first-child {
 		font-size: 1.4rem;
+		max-width: $container-md;
+	}
+	del {
+		color: rgba($mono-3, 0.5);
+		span {
+			color: $mono-3;
+		}
+	}
+	figure {
+	}
+	img {
+		display: block;
+		margin: $spacing-md auto;
+	}
+	a {
+		background: linear-gradient(to top, transparent 5%, rgba($blue, 0.5) 5%, rgba($blue, 0.5) 13%, transparent 13%);
+		&:hover {
+			text-decoration: underline;	
+			background: linear-gradient(to top, transparent 5%, $blue 5%, $blue 13%, transparent 13%);
+		}
 	}
 }
 
@@ -38,5 +67,15 @@
 		h4 {
 			margin-top: 1.5em;
 		}
+		ol,
+		ul {
+			margin-top: $spacing-sm;
+			padding-left: 0;
+		}
+	}
+}
+@media (min-width: $media-lg) {
+	.Essay {
+		font-size: $fontSize-xl;
 	}
 }

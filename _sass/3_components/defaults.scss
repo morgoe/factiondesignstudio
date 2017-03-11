@@ -47,8 +47,10 @@ img {
 	}
 }
 ::selection {
+	color: $blue;
 	background: rgba($blue, 0.15); /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
+	color: $blue;
 	background: rgba($blue, 0.15); /* Gecko Browsers */
 }
