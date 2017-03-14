@@ -1,3 +1,17 @@
 <header class="Header">
 	<a class="Header-logo" href="/">Faction Design Studio.</a>
+	<ul class="Header-navigation">
+		<li>
+			<a class="Header-navigationLink {% if page.siteNav == 'home' %}now-active{% endif %}" href="{{ site.baseurl }}/" data-text="Home"></a>
+		</li>
+		<li>
+			<a class="Header-navigationLink {% if page.siteNav == 'process' %}now-active{% endif %}" href="{{ site.baseurl }}/our-process/" data-text="Process"></a>
+		</li>
+		<li>
+			<a class="Header-navigationLink {% if page.siteNav == 'services' %}now-active{% endif %}" href="{{ site.baseurl }}/services/" data-text="Services"></a>
+		</li>
+		<li>
+			<a class="Header-navigationLink {% if page.siteNav == 'contact' %}now-active{% endif %}" href="{{ site.baseurl }}/contact/" data-text="Contact"></a>
+		</li>
+	</ul>
 </header>

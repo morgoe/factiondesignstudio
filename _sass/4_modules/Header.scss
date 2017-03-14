@@ -1,9 +1,92 @@
 .Header {
+	@include flexbox();
+	@include justify-content(space-between);
 	font-weight: 500;
 	font-size: $fontSize;
 	font-family: $font-system;
 	margin-bottom: $spacing-md;
+	a {
+		color: inherit;
+	}
 }
 .Header-logo {
-	color: inherit;
+	position: relative;
+	width: 20px;
+	text-indent: -9999px;
+	&:after {
+		content: "F.";
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		left: 0;
+		color: white;
+		background: $mono-3;
+		text-indent: 0;
+		text-align: center;
+		font-weight: bold;
+		border-radius: 2px;
+	}
+}
+.Header-navigation {
+	@include flexbox();
+	> li {
+		&:first-child {
+			display: none;
+		}
+		+ li {
+			margin-left: $spacing-sm;
+		}
+	}
+}
+.Header-navigationLink {
+	position: relative;
+	&:before,
+	&:after {
+		content: attr(data-text);
+	}
+	&:before {
+		position: absolute;
+		left: 0;
+		right: 0;
+		text-align: center;
+		text-decoration: inherit;
+	}
+	&:after {
+		font-weight: 900;
+		opacity: 0;
+	}
+	&.now-active {
+		&:before {
+			opacity: 0;
+		}
+		&:after {
+			opacity: 1;
+		}
+	}
+}
+
+@media (min-width: $media-xs) {
+	.Header-navigation {
+		> li {
+			&:first-child {
+				display: list-item;
+			}
+		}
+	}
+}
+@media (min-width: $media-sm) {
+	.Header-navigation {
+		> li {
+			&:first-child {
+				display: none;
+			}
+		}
+	}
+	.Header-logo {
+		text-indent: 0;
+		width: auto;
+		&:after {
+			display: none;
+		}
+	}
 }

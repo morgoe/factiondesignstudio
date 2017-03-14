@@ -8,16 +8,8 @@
 	@include flex-grow(1);
 }
 .Page-title {
-	position: relative;
-	font-weight: 400;
-	&:after {
-		content: "";
-		display: block;
-		width: 100%;
-		border-bottom: 3px solid;
-		position: absolute;
-		bottom: 0.25rem;
-	}
+	margin: $spacing-md 0 $spacing-lg;
+	text-align: center;
 }
 .Page-header {
 	display: inline-block;

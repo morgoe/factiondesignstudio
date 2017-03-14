@@ -3,19 +3,16 @@ layout:                post
 date:                  2017-03-09
 categories:
 - blog
-siteNav: blog
+siteNav: process
 
-title:                 "Iterative Design in Action"
+permalink: 				/our-process/
 
-thumbnail:             blog/design-process/thumbnail.gif
-image:                 blog/design-process/thumbnail.gif
+title:					"Iterative Design in Action"
 
-is_caseStudy:          true
+thumbnail:				blog/design-process/thumbnail.gif
+image:					blog/design-process/thumbnail.gif
 
-description:           "We always talk about design being iterative, but so often we only see the end result and not the many steps it took to get there."
-description_short:     "I want to take some time to shed some light on what my iterative process is. Because if you work with me, I’m not going to give you the exact same end result as I’ve given another company. But we’ll be using a similar iterative process to approach your unique problems."
-
-body-id: design-process
+description:			"We always talk about design being iterative, but so often we only see the end result and not the many steps it took to get there."
 ---
 
 We always talk about design being iterative, but so often we only see the end result and not the many steps it took to get there. Often the end result looks simple and obvious, like it could have been designed in minutes. But simple and obvious is usually very hard to get to. A bottom tab bar is hardly a revolutionary concept, but Facebook took 6 years to get there, and Spotify only got there last year.
