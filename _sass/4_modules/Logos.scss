@@ -1,0 +1,36 @@
+.Logos {
+	margin-left: auto;
+	margin-right: auto;
+}
+.Logos-grid {
+	text-align: center;
+	// @include flexbox();
+	// @include align-items(center);
+}
+.Logos-gridItem {
+	display: inline-block;
+	padding: 0 $spacing-sm;
+	vertical-align: middle;
+}
+.Logos--mobile {
+	max-width: 400px;
+}
+.Logos--desktop {
+	display: none;
+	max-width: $container-md;
+}
+
+@media (min-width: $media-xs) {
+	.Logos-gridItem {
+	}
+}
+@media (min-width: $media-sm) {
+	.Logos--mobile {
+		display: none;
+	}
+	.Logos--desktop {
+		display: block;
+	}
+	.Logos-gridItem {
+	}
+}
