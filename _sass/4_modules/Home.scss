@@ -11,3 +11,41 @@
 	margin: auto;
 	width: 76.0416667%;
 }
+.Home-hero {
+	color: white;
+	text-shadow: 0 2px 4px rgba(black, 0.25);
+	background: $red;
+	background-image: url('/assets/images/home/hero.jpg');
+	background-position: top;
+	background-size: cover;
+	padding-bottom: 8rem;
+}
+.Home-process {
+	margin-top: -8rem;
+}
+.Home-processCard {
+	color: inherit;
+	font-size: $fontSize-lg;
+	&:hover {
+		.Home-processCard-readMore {
+			text-decoration: underline;
+		}
+	}
+}
+.Home-processCard-readMore {
+	color: $blue;
+	font-weight: 600;
+}
+
+#home {
+	.Navbar-logo:after {
+		color: $red;
+		background: white;
+	}
+}
+
+@media (min-width: $media-lg) {
+	.Home-processCard {
+		font-size: $fontSize-xl;
+	}
+}

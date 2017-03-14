@@ -7,18 +7,28 @@ permalink: /contact/
 title: "Contact Us"
 ---
 
+<section class="Hero container--md text-xl m-top--lg m-bottom--xl">
+	<p>Got questions? We're here to help.</p>
+
+	<p>Drop us a line</p>
+
+	<p>Or <a href="tel:0426395232">give us a call</a></p>
+
+	<p>Or just <a href="https://www.google.com/maps/place/289+Lyons+Rd,+Russell+Lea+NSW+2046,+Australia/@-33.8601618,151.1397601,17z/data=!3m1!4b1!4m5!3m4!1s0x6b12aff7b8c32117:0xd854b943c857c68a!8m2!3d-33.8601618!4d151.1419488" target="_blank">drop by</a>.</p>
+</section>
+
 <form class="container container--xs clearfix">
 	<div class="form-group">
 		<label class="form-label">Name</label>
-		<input class="input js-serviceCheckout-input" name="name">
+		<input class="input js-serviceCheckout-input" name="name" autocomplete="name">
 	</div>
 	<div class="form-group">
 		<label class="form-label">Work Email</label>
-		<input class="input js-serviceCheckout-input" name="name">
+		<input class="input js-serviceCheckout-input" name="email" type="email" autocomplete="email">
 	</div>
 	<div class="form-group">
 		<label class="form-label">Subject</label>
-		<textarea class="input js-serviceCheckout-input" name="name" rows="4"></textarea>
+		<textarea class="input js-serviceCheckout-input" name="subject" rows="4"></textarea>
 	</div>
 	<button class="button float-right js-serviceCheckout-submit">Submit</button>
 </form>

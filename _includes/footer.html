@@ -1,11 +1,17 @@
-<footer class="Footer">
-	<ul class="Footer-social">
+<footer class="Navbar Navbar--footer">
+	<a class="Navbar-logo" href="/">Faction Design Studio.</a>
+	<ul class="Navbar-links">
 		<li>
-			<a class="Footer-socialLink" href="https://www.facebook.com/factiondesignstudio/" target="_blank">
-				<img src="/assets/icons/facebook.svg">
-				<span class="sr-only">Facebook</span>
-			</a>
+			<a class="Navbar-link {% if page.siteNav == 'home' %}now-active{% endif %}" href="{{ site.baseurl }}/" data-text="Home"></a>
+		</li>
+		<li>
+			<a class="Navbar-link {% if page.siteNav == 'process' %}now-active{% endif %}" href="{{ site.baseurl }}/our-process/" data-text="Process"></a>
+		</li>
+		<li>
+			<a class="Navbar-link {% if page.siteNav == 'services' %}now-active{% endif %}" href="{{ site.baseurl }}/services/" data-text="Services"></a>
+		</li>
+		<li>
+			<a class="Navbar-link {% if page.siteNav == 'contact' %}now-active{% endif %}" href="{{ site.baseurl }}/contact/" data-text="Contact"></a>
 		</li>
 	</ul>
-	<div class="Footer-logo">Faction Design Studio.</div>
 </footer>

@@ -1,0 +1,16 @@
+.Hero {
+	@extend .container;
+	text-align: center;
+	p {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	a {
+		color: inherit;
+		background: linear-gradient(to top, transparent 7%, rgba($mono-3, 0.5) 7%, rgba($mono-3, 0.5) 13%, transparent 13%);
+		&:hover {
+			text-decoration: none;	
+			background: linear-gradient(to top, transparent 7%, $mono-3 7%, $mono-3 13%, transparent 13%);
+		}
+	}
+}

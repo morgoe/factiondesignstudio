@@ -54,7 +54,7 @@
 	a {
 		background: linear-gradient(to top, transparent 5%, rgba($blue, 0.5) 5%, rgba($blue, 0.5) 13%, transparent 13%);
 		&:hover {
-			text-decoration: underline;	
+			text-decoration: none;	
 			background: linear-gradient(to top, transparent 5%, $blue 5%, $blue 13%, transparent 13%);
 		}
 	}

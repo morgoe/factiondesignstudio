@@ -1,15 +1,14 @@
-.Header {
+.Navbar {
 	@include flexbox();
 	@include justify-content(space-between);
 	font-weight: 500;
 	font-size: $fontSize;
 	font-family: $font-system;
-	margin-bottom: $spacing-md;
 	a {
 		color: inherit;
 	}
 }
-.Header-logo {
+.Navbar-logo {
 	position: relative;
 	width: 20px;
 	text-indent: -9999px;
@@ -20,6 +19,7 @@
 		position: absolute;
 		left: 0;
 		color: white;
+		text-shadow: none;
 		background: $mono-3;
 		text-indent: 0;
 		text-align: center;
@@ -27,7 +27,7 @@
 		border-radius: 2px;
 	}
 }
-.Header-navigation {
+.Navbar-links {
 	@include flexbox();
 	> li {
 		&:first-child {
@@ -38,7 +38,7 @@
 		}
 	}
 }
-.Header-navigationLink {
+.Navbar-link {
 	position: relative;
 	&:before,
 	&:after {
@@ -65,8 +65,16 @@
 	}
 }
 
+.Navbar--header {
+	margin-bottom: $spacing-md;
+}
+.Navbar--footer {
+	border-top: 1px solid rgba($mono-3, 0.1);
+	padding: $spacing-md 0;
+}
+
 @media (min-width: $media-xs) {
-	.Header-navigation {
+	.Navbar-links {
 		> li {
 			&:first-child {
 				display: list-item;
@@ -75,14 +83,7 @@
 	}
 }
 @media (min-width: $media-sm) {
-	.Header-navigation {
-		> li {
-			&:first-child {
-				display: none;
-			}
-		}
-	}
-	.Header-logo {
+	.Navbar-logo {
 		text-indent: 0;
 		width: auto;
 		&:after {

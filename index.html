@@ -1,36 +1,59 @@
 ---
-layout: page
+layout: default
 siteNav: home
 body-id: home
 ---
 
-<section class="text-center container container--md m-top--xl m-bottom--xl">
-	<div class="text-xl">We turn complex ideas into intuitive, beautiful products.</div>
-	
-	<div class="Home-video m-top--lg">
-		<video class="Home-screen" src="/assets/images/home.mp4" loop autoplay playsinline></video>
-		<img class="Home-laptop" src="/assets/images/laptop.png">
+<section class="Home-hero">
+	<div class="Canvas">
+		<div class="container">
+			{% include header.html %}
+
+			<section class="Hero container--sm text-xl m-top--xl m-bottom--lg">
+				<div class="text-xl">We help startups and small businesses turn complex ideas into intuitive, beautiful products.</div>
+			</section>
+		</div>
 	</div>
 </section>
 
-{% include sales/logos.html %}
+<div class="Canvas">
+	<div class="container">
+		<section class="Home-process container container--sm m-bottom--lg">
+			{% for post in site.categories['blog'] %}
+				<a class="card card--link p--md Home-processCard" href="{{post.url}}">
+					<div class="media">
+						<div class="media-body">
+							<header class="media-header">
+								<div class="media-headline">
+									<h3 class="media-title">{{post.title}}</h3>
+								</div>
+							</header>
+							<div class="m-top--sm">{{post.description}}</div>
+							<div class="Home-processCard-readMore m-top--sm">Read more...</div>
+						</div>
+					</div>
+				</a>
+			{% endfor %}
+		</section>
 
-<hr>
+		{% include sales/logos.html %}
 
-<section class="testimonial m-bottom--xl">
-	<header class="testimonial-header">
-		<h2 class="testimonial-title">Love the fresh, fast new web interface!</h2>
-		<h5 class="testimonial-subtitle">
-			Deputy went from 40,000 users to 
-			<mark data-text="270,000">270,000</mark>
-			in less than a year.
-		</h5>
-	</header>
-	<div class="testimonial-excerpt">
-		<p class="testimonial-quote">I just wanted to say how much I love the new-look Deputy web client. You guys have obviously spent a lot of time thinking about the design of the app and it shows. Well done!</p>
-		<p class="testimonial-quote testimonial-goo">I just wanted to say how much I love the new-look Deputy web client. You guys have obviously spent a lot of time thinking about the design of the app and it shows. Well done!</p>
-		<div class="testimonial-author">–Jason Tait, Deputy customer</div>
+		<section class="testimonial m-top--xl m-bottom--xl">
+			<header class="testimonial-header">
+				<h2 class="testimonial-title">Love the fresh, fast new web interface!</h2>
+				<h5 class="testimonial-subtitle">
+					Deputy went from 40,000 users to 
+					<mark data-text="270,000">270,000</mark>
+					in less than a year.
+				</h5>
+			</header>
+			<div class="testimonial-excerpt">
+				<p class="testimonial-quote">I just wanted to say how much I love the new-look Deputy web client. You guys have obviously spent a lot of time thinking about the design of the app and it shows. Well done!</p>
+				<p class="testimonial-quote testimonial-goo">I just wanted to say how much I love the new-look Deputy web client. You guys have obviously spent a lot of time thinking about the design of the app and it shows. Well done!</p>
+				<div class="testimonial-author">–Jason Tait, Deputy customer</div>
+			</div>
+		</section>
+		
+		{% include footer.html %}
 	</div>
-</section>
-
-{% include services.html %}
+</div>

@@ -12,7 +12,11 @@ title:					"Iterative Design in Action"
 thumbnail:				blog/design-process/thumbnail.gif
 image:					blog/design-process/thumbnail.gif
 
-description:			"We always talk about design being iterative, but so often we only see the end result and not the many steps it took to get there."
+description:			"Most agency portfolios show off the finish product, which looks beautiful, but this isn’t very helpful when it comes to picking the right agency to go with. 
+<br><br>
+What is helpful is learning the iterative process that produced that solution, and how that process will be applied to the unique problems surrounding your thing.
+<br><br>
+So we’ve written about our design process transparently and in detail, so you can get an idea of what it might be like to work with us."
 ---
 
 We always talk about design being iterative, but so often we only see the end result and not the many steps it took to get there. Often the end result looks simple and obvious, like it could have been designed in minutes. But simple and obvious is usually very hard to get to. A bottom tab bar is hardly a revolutionary concept, but Facebook took 6 years to get there, and Spotify only got there last year.

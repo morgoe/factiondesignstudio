@@ -15,6 +15,23 @@ body-id: services
 				{{ content }}
 			</section>
 
+
+			<h3 class="text-regular m-top--lg m-bottom--md">A little about you</h3>
+			<div class="flexGrid">
+				<div class="flexGrid-item when-sm-6 when-md-4">
+					<div class="form-group">
+						<label class="form-label">Name</label>
+						<input class="input js-serviceCheckout-input" name="name" autocomplete="name">
+					</div>
+				</div>
+				<div class="flexGrid-item when-sm-6 when-md-4">
+					<div class="form-group">
+						<label class="form-label">Work Email</label>
+						<input class="input js-serviceCheckout-input" name="email" type="email" autocomplete="email">
+					</div>
+				</div>
+			</div>
+
 			<h3 class="text-regular m-top--md">{{ page.questions.size }} Questions</h3>
 			<div class="flexGrid">
 				<div class="flexGrid-item when-md-8">
