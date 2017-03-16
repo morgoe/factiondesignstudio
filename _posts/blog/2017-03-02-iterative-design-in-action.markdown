@@ -12,7 +12,7 @@ title:					"Iterative Design in Action"
 thumbnail:				blog/design-process/thumbnail.gif
 image:					blog/design-process/thumbnail.gif
 
-description:			"Most agency portfolios show off the finish product, which looks beautiful, but this isn’t very helpful when it comes to picking the right agency to go with. 
+description:			"Most agency portfolios show off the finished product, which looks beautiful, but this isn’t very helpful when it comes to picking the right agency to go with. 
 <br><br>
 What is helpful is learning the iterative process that produced that solution, and how that process will be applied to the unique problems surrounding your thing.
 <br><br>
